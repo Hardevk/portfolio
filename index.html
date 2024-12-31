@@ -11,23 +11,126 @@
     name="description">
   <meta content="" name="keywords">
 
-<style>
-  .carousel-control-next-icon, .carousel-control-prev-icon {
-    display: inline-block;
-    width: 2rem;
-    background: #222;
-    height: 2rem;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 100% 100%;
-    border-radius: 30px;
-    padding: 10px;
-}
-.carousel-control-next, .carousel-control-prev
-{
-  width: 2% !important;
-}
-</style>
+  <style>
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      display: inline-block;
+      width: 2rem;
+      background: #222;
+      height: 2rem;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 100% 100%;
+      border-radius: 30px;
+      padding: 10px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      width: 2% !important;
+    }
+
+    .portfolio-item .carousel {
+    display: none; /* Hide all carousels by default */
+  }
+  .portfolio-item.filter-alleffect #allEffectsCarousel {
+    display: block; /* Show only the 'allEffectsCarousel' by default */
+  }
+    /* Add this CSS to your stylesheet */
+
+    /* Ensure all portfolio items stack vertically on smaller screens */
+    @media (max-width: 768px) {
+      #photoshopCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+      }
+
+      #photoshopCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        /* Prevent shrinking or growing */
+        width: 100%;
+        /* Take up full width of the viewport */
+      }
+
+      #photoshopCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbars (optional) */
+      }
+
+
+      /* Illustrator */
+      #illustratorCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #illustratorCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #illustratorCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #illustratorCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+      /* afterEffectsCarousel */
+      #afterEffectsCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #afterEffectsCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #afterEffectsCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #afterEffectsCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+      /* photographyCarousel */
+      #photographyCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #photographyCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #photographyCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #photographyCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+
+
+    }
+  </style>
 
 
 
@@ -130,7 +233,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Hardev Kamboe</h1>
-      <p>I'm a<span class="typed" data-typed-items="Designer, Student, Photographer"></span></p>
+      <p>I'm a <span class="typed" data-typed-items="Designer, Student, Photographer"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -351,7 +454,7 @@
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter=".filter" class="filter-active">All</li>
+              <li data-filter=".filter-alleffect" class="filter-active">All</li>
               <li data-filter=".filter-photoshop">Adobe Photoshop</li>
               <li data-filter=".filter-illustrator">Adobe Illustrator</li>
               <li data-filter=".filter-aftereffect">Adobe After Effects</li>
@@ -363,6 +466,148 @@
 
         <!-- Portfolio Container -->
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+
+
+          <!-- ALL Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-alleffect">
+            <div id="allEffectsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                  <div class="row">
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop1.jpg" class="d-block w-100" alt="Photoshop Project 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="This is a restaurant menu I made"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop4.jpg" class="d-block w-100" alt="Photoshop Project 4">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop4.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Emphasizing depth by visually integrating it as text descending into a well-like perspective"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/Zup24veFqCw?si=JuNNnWvRyEyKBo3i"
+                          title="After Effects Video 2" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+                <!-- Carousel Item 2 -->
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Video 4 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/CRTjxAvqmtE?si=ST-DHYr-czMiWb7l"
+                          title="After Effects Video 4" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/ocean.jpg" class="d-block w-100" alt="Illustrator Project 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/ocean.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Seafood logo with fish icon and clean typography"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Video 5 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+                <div class="portfolio-wrap">
+                  <iframe 
+                    class="d-block w-100" 
+                    src="https://www.youtube.com/embed/VIDEO_ID_5" 
+                    title="After Effects Video 5" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                  <div class="portfolio-links">
+                    <a href="https://www.youtube.com/embed/VIDEO_ID_5" data-gallery="portfolioGallery" class="portfolio-lightbox" title="After Effects Video 5"><i class="bx bx-plus"></i></a>
+                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div> -->
+                    <!-- Video 6 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+                <div class="portfolio-wrap">
+                  <iframe 
+                    class="d-block w-100" 
+                    src="https://www.youtube.com/embed/VIDEO_ID_6" 
+                    title="After Effects Video 6" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                  <div class="portfolio-links">
+                    <a href="https://www.youtube.com/embed/VIDEO_ID_6" data-gallery="portfolioGallery" class="portfolio-lightbox" title="After Effects Video 6"><i class="bx bx-plus"></i></a>
+                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#allEffectsCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#allEffectsCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+
 
           <!-- Photoshop Tab Carousel (with 3 items per slide) -->
           <div class="col-lg-12 portfolio-item filter-photoshop">
@@ -448,21 +693,23 @@
                     <!-- Portfolio Item 6 -->
                     <div class="col-lg-4 col-md-6">
                       <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/Orange Juice.jpg" class="d-block w-100" alt="Photoshop Project 6">
+                        <img src="assets/img/portfolio/Orange Juice.jpg" class="d-block w-100"
+                          alt="Photoshop Project 6">
                         <div class="portfolio-links">
                           <a href="assets/img/portfolio/Orange Juice.jpg" data-gallery="portfolioGallery"
-                            class="portfolio-lightbox" title="An orange juice bottle with fresh oranges"><i class="bx bx-plus"></i></a>
+                            class="portfolio-lightbox" title="An orange juice bottle with fresh oranges"><i
+                              class="bx bx-plus"></i></a>
                           <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                       </div>
                     </div>
 
-                    
+
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row">
-                  
+
                     <!-- Portfolio Item 5 -->
                     <div class="col-lg-4 col-md-6">
                       <div class="portfolio-wrap">
@@ -498,7 +745,7 @@
                         </div>
                       </div>
                     </div>
-                   
+
 
                   </div>
                 </div>
@@ -506,7 +753,7 @@
 
                 <div class="carousel-item">
                   <div class="row">
-                    
+
                     <div class="col-lg-4 col-md-6">
                       <div class="portfolio-wrap">
                         <img src="assets/img/portfolio/Strawberry.jpg" class="d-block w-100" alt="Photoshop Project 6">
@@ -581,14 +828,11 @@
                         </div>
                       </div>
                     </div>
-                   
+
                   </div>
                 </div>
-                <!-- <div class="carousel-item">
+                <div class="carousel-item">
                   <div class="row">
-                   
-                    
-                    
                     <div class="col-lg-4 col-md-6">
                       <div class="portfolio-wrap">
                         <img src="assets/img/portfolio/Ocean fresh 3.jpg" class="d-block w-100"
@@ -604,7 +848,7 @@
                     </div>
 
                   </div>
-                </div> -->
+                </div>
               </div>
               <!-- Carousel Controls -->
               <button class="carousel-control-prev" type="button" data-bs-target="#illustratorCarousel"
@@ -620,80 +864,68 @@
             </div>
           </div>
 
-    <!-- After Effects Tab Carousel -->
-<div class="col-lg-12 portfolio-item filter-aftereffect">
-  <div id="afterEffectsCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <!-- Carousel Item 1 -->
-      <div class="carousel-item active">
-        <div class="row">
-          <!-- Video 1 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap1">
-              <iframe 
-                class="d-block w-100" 
-                height="315"
-                src="https://www.youtube.com/embed/txPtRznpClI?si=hGg9BRD3-lsCUjyy" 
-                title="After Effects Video 1" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-              
-            </div>
-          </div>
-          <!-- Video 2 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap1">
-              <iframe 
-                class="d-block w-100" 
-                src="https://www.youtube.com/embed/Zup24veFqCw?si=JuNNnWvRyEyKBo3i" 
-                title="After Effects Video 2" 
-                frameborder="0" 
-                height="315"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-              
-            </div>
-          </div>
-          <!-- Video 3 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap1">
-              <iframe 
-                class="d-block w-100" 
-                src="https://www.youtube.com/embed/RqXbTGhtl30?si=WxvqL0TUO-UKcfnn" 
-                title="After Effects Video 3" 
-                frameborder="0" 
-                height="315"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Carousel Item 2 -->
-      <div class="carousel-item">
-        <div class="row">
-          <!-- Video 4 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap1">
-              <iframe 
-                class="d-block w-100" 
-                src="https://www.youtube.com/embed/CRTjxAvqmtE?si=ST-DHYr-czMiWb7l" 
-                title="After Effects Video 4" 
-                frameborder="0" 
-                height="315"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-              
-            </div>
-          </div>
-          <!-- Video 5 -->
-          <!-- <div class="col-lg-4 col-md-6">
+          <!-- After Effects Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-aftereffect">
+            <div id="afterEffectsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Video 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100" height="315"
+                          src="https://www.youtube.com/embed/txPtRznpClI?si=hGg9BRD3-lsCUjyy"
+                          title="After Effects Video 1" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Video 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/Zup24veFqCw?si=JuNNnWvRyEyKBo3i"
+                          title="After Effects Video 2" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Video 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/RqXbTGhtl30?si=WxvqL0TUO-UKcfnn"
+                          title="After Effects Video 3" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel Item 2 -->
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Video 4 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/CRTjxAvqmtE?si=ST-DHYr-czMiWb7l"
+                          title="After Effects Video 4" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Video 5 -->
+                    <!-- <div class="col-lg-4 col-md-6">
             <div class="portfolio-wrap">
               <iframe 
                 class="d-block w-100" 
@@ -709,8 +941,8 @@
               </div>
             </div>
           </div> -->
-          <!-- Video 6 -->
-          <!-- <div class="col-lg-4 col-md-6">
+                    <!-- Video 6 -->
+                    <!-- <div class="col-lg-4 col-md-6">
             <div class="portfolio-wrap">
               <iframe 
                 class="d-block w-100" 
@@ -726,73 +958,97 @@
               </div>
             </div>
           </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#afterEffectsCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#afterEffectsCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#afterEffectsCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#afterEffectsCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
 
-<!-- Photography Tab Carousel -->
-<div class="col-lg-12 portfolio-item filter-photo">
-  <div id="photographyCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <!-- Carousel Item 1 -->
-      <div class="carousel-item active">
-        <div class="row">
-          <!-- Photo 1 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          <!-- Photography Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-photo">
+            <div id="photographyCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Photo 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo2.jpg" class="d-block w-100" alt="Photography 2">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo2.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 2"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo3.jpg" class="d-block w-100" alt="Photography 3">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 3"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Photo 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Photo 2 -->
+                    
+                  </div>
+                </div>
+                <!-- Add more photos for Carousel Item 2 if needed -->
               </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#photographyCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#photographyCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-          <!-- Photo 2 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/photo2.jpg" class="d-block w-100" alt="Photography 2">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/photo2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Photography 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Photo 3 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/photo3.jpg" class="d-block w-100" alt="Photography 3">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/photo3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Photography 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Add more photos for Carousel Item 2 if needed -->
-    </div>
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#photographyCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#photographyCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
 
 
           <!-- Add similar carousels for After Effects and Photography Tabs -->
@@ -897,6 +1153,50 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Initially show only the 'allEffectsCarousel'
+          document.querySelectorAll(".portfolio-item .carousel").forEach(function (carousel) {
+            carousel.style.display = "none";
+          });
+          document.querySelector("#allEffectsCarousel").style.display = "block";
+      
+          // Add event listener for filter buttons
+          document.querySelectorAll("#portfolio-flters li").forEach(function (filterBtn) {
+            filterBtn.addEventListener("click", function () {
+              // Remove active class from all buttons
+              document.querySelectorAll("#portfolio-flters li").forEach(function (btn) {
+                btn.classList.remove("filter-active");
+              });
+      
+              // Add active class to the clicked button
+              this.classList.add("filter-active");
+      
+              // Get the filter class
+              const filterClass = this.getAttribute("data-filter");
+      
+              // Show/hide carousels based on the selected filter
+              document.querySelectorAll(".portfolio-item .carousel").forEach(function (carousel) {
+                carousel.style.display = "none"; // Hide all carousels
+              });
+      
+              if (filterClass === ".filter-alleffect") {
+                document.querySelector("#allEffectsCarousel").style.display = "block";
+              } else if (filterClass === ".filter-photoshop") {
+                document.querySelector("#photoshopCarousel").style.display = "block";
+              } else if (filterClass === ".filter-illustrator") {
+                document.querySelector("#illustratorCarousel").style.display = "block";
+              } else if (filterClass === ".filter-aftereffect") {
+                document.querySelector("#afterEffectsCarousel").style.display = "block";
+              } else if (filterClass === ".filter-photo") {
+                document.querySelector("#photographyCarousel").style.display = "block";
+              }
+            });
+          });
+        });
+      </script>
+      
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
