@@ -476,7 +476,8 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter=".filter-alleffect" class="filter-active">All</li>
-              <li data-filter=".filter-images">Images Creation</li>
+              <li data-filter=".filter-figma">Figma</li>
+              <li data-filter=".filter-images">AI Image Creation</li>
               <li data-filter=".filter-photoshop">Adobe Photoshop</li>
               <li data-filter=".filter-illustrator">Adobe Illustrator</li>
               <li data-filter=".filter-aftereffect">Adobe After Effects</li>
@@ -628,6 +629,74 @@
               </button>
             </div>
           </div>
+
+          <div class="col-lg-12 portfolio-item filter-figma">
+            <div id="figmaCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/figmaproject.png" class="d-block w-100" alt="Project 1">
+                      
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/figmaproject.png" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="UBudget app (Individual)"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="https://www.figma.com/design/NhUroVyKD9A4mt2vJOinbp/Student-budget-and-expense-tracker?node-id=0-1&t=aBNue4S20ef7PZYW-1" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                        
+                      </div>
+                      <a class="btn btn-primary mt-3" href="https://www.figma.com/design/NhUroVyKD9A4mt2vJOinbp/Student-budget-and-expense-tracker?node-id=0-1&t=aBNue4S20ef7PZYW-1" data-gallery="portfolioGallery">View UBudget App</a>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/figmaproject2.png" class="d-block w-100" alt="Illustrator Project 2">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/figmaproject2.png" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="ISOW website (Group)"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="https://www.figma.com/design/k7R8DOzb8fh9tsjL9DLKaR/ISOW-Project--Copy-?node-id=80-201&t=BdbTcJNjwq6HCLdR-1" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                      <a class="btn btn-primary mt-3" href="https://www.figma.com/design/k7R8DOzb8fh9tsjL9DLKaR/ISOW-Project--Copy-?node-id=80-201&t=BdbTcJNjwq6HCLdR-1" data-gallery="portfolioGallery">View UBudget App</a>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/img3.jpg" class="d-block w-100"
+                          alt="Illustrator Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/img3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Prompt: Create a samurai in a forest setting during a cold night"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div> -->
+
+                  </div>
+                </div>  
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#imagesCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#imagesCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+
             <!-- Illustrator Tab Carousel (with 3 items per slide) -->
           <div class="col-lg-12 portfolio-item filter-images">
             <div id="imagesCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -1311,9 +1380,10 @@
                 document.querySelector("#afterEffectsCarousel").style.display = "block";
               } else if (filterClass === ".filter-photo") {
                 document.querySelector("#photographyCarousel").style.display = "block";
-              
               } else if (filterClass === ".filter-images") {
                 document.querySelector("#imagesCarousel").style.display = "block";
+              } else if (filterClass === ".filter-figma") {
+                document.querySelector("#figmaCarousel").style.display = "block";
               }
             });
           });
