@@ -240,10 +240,10 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+            <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>Portfolio</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Portfolio</span></a></li>
+        
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -312,7 +312,7 @@
 
 
     <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
+<!--     <section id="skills" class="skills section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -378,7 +378,7 @@
       </div>
 
       </div>
-    </section><!-- End Skills Section -->
+    </section><!-- End Skills Section --> -->
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -484,7 +484,7 @@
             <ul id="portfolio-flters">
               <li data-filter=".filter-alleffect" class="filter-active">All</li>
               <li data-filter=".filter-figma">Figma</li>
-              <li data-filter=".filter-images">AI Image Creation</li>
+              <li data-filter=".filter-images">Video Transitions & Layers</li>
               <li data-filter=".filter-photoshop">Adobe Photoshop</li>
               <li data-filter=".filter-illustrator">Adobe Illustrator</li>
               <li data-filter=".filter-aftereffect">Adobe After Effects</li>
@@ -731,43 +731,29 @@
                   <div class="row">
                     <!-- Portfolio Item 1 -->
                     <div class="col-lg-4 col-md-6">
-                      <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/img1.jpg" class="d-block w-100" alt="Project 1">
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/img1.jpg" data-gallery="portfolioGallery"
-                            class="portfolio-lightbox" title="Prompt : Create a samurai"><i
-                              class="bx bx-plus"></i></a>
-                          <a href="" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100" height="315"
+                          src="https://www.youtube.com/embed/DbLH_o9CiBo?si=zFIq-4fxeYjnNMPY"
+                          title="After Effects Video 1" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
                       </div>
                     </div>
                     <!-- Portfolio Item 2 -->
-                    <div class="col-lg-4 col-md-6">
-                      <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/img2.jpg" class="d-block w-100" alt="Illustrator Project 2">
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/img2.jpg" data-gallery="portfolioGallery"
-                            class="portfolio-lightbox"
-                            title="Prompt: Create a samurai in a forest setting"><i
-                              class="bx bx-plus"></i></a>
-                          <a href="" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
+                   <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100" height="315"
+                          src="https://www.youtube.com/embed/86hLAGPfCAY?si=A92lD1aplOCbnu8y"
+                          title="After Effects Video 1" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
                       </div>
                     </div>
-                    <!-- Portfolio Item 3 -->
-                    <div class="col-lg-4 col-md-6">
-                      <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/img3.jpg" class="d-block w-100"
-                          alt="Illustrator Project 5">
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/img3.jpg" data-gallery="portfolioGallery"
-                            class="portfolio-lightbox"
-                            title="Prompt: Create a samurai in a forest setting during a cold night"><i
-                              class="bx bx-plus"></i></a>
-                          <a href="" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
+              
 
                   </div>
                 </div>
