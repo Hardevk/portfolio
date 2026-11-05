@@ -1,33 +1,1557 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./assets/img/favicon 11.png" />
-    <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" />
-    <title>Hardev Kamboe — UX Designer & Digital Performance Marketer</title>
-    <meta
-      name="description"
-      content="Portfolio of Hardev Kamboe. UX Design student at Wilfrid Laurier University with digital performance marketing experience at TD Bank Group. Where design meets data."
-    />
-    <meta property="og:title" content="Hardev Kamboe — UX Designer & Digital Performance Marketer" />
-    <meta
-      property="og:description"
-      content="Bridging Human-Centered UX Design, Visual Storytelling & Quantitative Performance Marketing."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="./assets/img/profile-img.jpg" />
+<html lang="en">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-dark-950 text-slate-100 antialiased selection:bg-brand-emerald selection:text-black overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Hardev Kamboe Portfolio Website</title>
+  <meta
+    content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries."
+    name="description">
+  <meta content="" name="keywords">
+
+  <style>
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      display: inline-block;
+      width: 2rem;
+      background: #222;
+      height: 2rem;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 100% 100%;
+      border-radius: 30px;
+      padding: 10px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      width: 2% !important;
+    }
+
+    .portfolio-item .carousel {
+      display: none;
+    }
+
+    .portfolio-item.filter-alleffect #allEffectsCarousel {
+      display: block;
+    }
+
+    /* Add this CSS to your stylesheet */
+
+    /* Ensure all portfolio items stack vertically on smaller screens */
+    @media (max-width: 768px) {
+      #photoshopCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+      }
+
+      #photoshopCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        /* Prevent shrinking or growing */
+        width: 100%;
+        /* Take up full width of the viewport */
+      }
+
+      #photoshopCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbars (optional) */
+      }
+
+
+      /* Illustrator */
+      #illustratorCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #illustratorCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #illustratorCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #illustratorCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+      /* Illustrator */
+      #allEffectsCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #allEffectsCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #allEffectsCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #allEffectsCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+      /* afterEffectsCarousel */
+      #afterEffectsCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #afterEffectsCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #afterEffectsCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #afterEffectsCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+      /* photographyCarousel */
+      #photographyCarousel .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      #photographyCarousel .carousel-item .portfolio-wrap {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      #photographyCarousel .carousel-item .row::-webkit-scrollbar {
+        display: none;
+        /* Optional: Hide scrollbars for cleaner design */
+      }
+
+      #photographyCarousel .carousel-item .row {
+        scrollbar-width: none;
+        /* Firefox: Hide scrollbars */
+      }
+
+
+
+    }
+  </style>
+
+
+
+
+  <!-- open graph tags -->
+
+  <meta property="og:type" content="Website" />
+
+  <meta property="og:title" content="Hardev Kamboe Portfolio Website" />
+
+  <meta property="og:description"
+    content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries." />
+
+  <meta property="og:image" content="https://kamboe.com/assets/img/hero-bg.jpg" />
+
+  <meta property="og:url" content="https://www.kamboe.com" />
+
+  <meta property="og:site_name" content="Hardev Kamboe Portfolio Website" />
+
+
+
+  <!-- Twitter tags -->
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hardev Kamboe Portfolio Website">
+
+  <meta name="twitter:description"
+    content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries.">
+
+  <meta name="twitter:image" content="https://kamboe.com/assets/img/hero-bg.jpg">
+
+  <meta name="twitter:image:alt" content="Hardev Kamboe Portfolio Website">
+
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Hardev Kamboe</a></h1>
+        <div class="social-links mt-3 text-center">
+
+
+          <a href="https://www.instagram.com/hardev__k/" class="instagram"><i class="bx bxl-instagram"></i></a>
+
+          <a href="https://www.linkedin.com/in/hardev-kamboe-882523258/" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i
+                class="bx bx-book-content"></i><span>Portfolio</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Hardev Kamboe</h1>
+      <p>I'm a <span class="typed" data-typed-items="UX Designer, Digital Marketer, Class of 2027"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>A fourth-year UX Design student at Wilfrid Laurier University, seeking opportunities in UX design and digital marketing across the Greater Toronto Area.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>UX Designer & Digital Marketer</h3>
+            <p class="fst-italic">
+              Currently studying at Wilfrid Laurier University.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.kamboe.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+289 838 5809</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Toronto, Canada</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Undergraduate</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kamboehardev@gmail.com</span>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <p>
+              I work where design meets data. As a Digital Performance Marketing intern at TD Bank Group, I analyzed paid search, social, and display campaigns across the funnel, wrote weekly performance recaps, and turned App Store reviews and focus group feedback into UX recommendations. Before that, at Breeze Max Web, I designed Google Ads creative and website wireframes, and I've used Design Thinking and Figma to build more intuitive user journeys for projects like ISOW. I'm looking to bring both skill sets to a team that cares about how users experience a brand, and how that shows up in the numbers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Skills Section ======= -->
+    <!--     <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>
+            Proficient in Adobe Photoshop, Illustrator, and After Effects for creative design, along with Figma for
+            user-centric layouts. Skilled in Microsoft Excel for data analysis and organization.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill">Adobe Photoshop <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Adobe Illustrator<i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Adobe After Affects <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">Figma <i class="val">65%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Microsoft Excel <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>Below is a brief summary highlighting my professional attributes.
+          </p>
+          <p><a href="./hardev-kamboe-resume.pdf" target="_blank">You can download my resume here.</a></p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Hardev Kamboe</h4>
+              <p><em>UX Design student with paid digital performance marketing experience at TD, working where user research, design and campaign data meet.</em></p>
+              <ul>
+                <li>Toronto, Ontario</li>
+                <li>289-838-5809</li>
+                <li>kamboehardev@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Design (BDes) in User Experience Design</h4>
+              <h5>2022 - Expected 2027</h5>
+
+              <p>Wilfrid Laurier University – Brantford ON.
+                This <a
+                  href=https://www.wlu.ca/programs/liberal-arts/undergraduate/user-experience-design-bdes/index.html
+                  class="program">program</a> emphasizes fostering design thinking and practical Skills for creating
+                impactful user experiences.
+              </p>
+            </div>
+            <div class="resume-item">
+              <h4>MM Robinson High School</h4>
+              <h5>2018 - 2022</h5>
+
+              <p> High School Diploma Achieved
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+
+            <div class="resume-item">
+              <h4>TD Bank Group - Digital Performance Marketing Wealth Intern/Co-op</h4>
+              <h5>Summer Internship 2026</h5>
+              <p><em>TD Easy Trade Investing | TD Marketing</em></p>
+              <ul>
+                <li>Supported TD Easy Trade digital performance marketing campaigns across paid search, paid social, display, programmatic, and public site channels.</li>
+                <li>Analyzed campaign performance across Awareness, Consideration, and Acquisition using KPIs including CTR, LPVs, CPLPV, app downloads, and account opens.</li>
+                <li>Prepared weekly Growth Pod recaps summarizing channel performance, creative insights, blockers, stakeholder updates, and next steps.</li>
+                <li>Reviewed customer journey, app onboarding, and intern focus group feedback to identify UX friction points and improvement opportunities.</li>
+                <li>Analyzed customer reviews from the App Store to identify recurring usability issues, pain points, and customer needs, translating findings into actionable UX recommendations.</li>
+                <li>Contributed recommendations on audience strategy, budget allocation, retargeting, and creative testing to improve campaign efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Barkyard – Dog Daycare & Grooming App (Claude Design)</h4>
+              <h5>Fall 2026</h5>
+              <ul>
+                <li>Took a fictional app from creative brief to a ~20-screen high-fidelity <a
+                    href="https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&t=MAXCIYrpQxNXQv5U-1"
+                    target="_blank">Figma prototype</a> and developer handoff using an AI-assisted Claude Design workflow (<a
+                    href="https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed" target="_blank">certificate</a>).</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Mobile App Design Case Study</h4>
+              <h5>July 2025 - August 2025</h5>
+              <ul>
+                <li>-Completed a short <a
+                    href="https://www.contentcreator.com/14-day-smartphone-filmmaker-course">smartphone filmmaker
+                    course</a> in special effects</li>
+                <li>-Designed a complete set of design <a
+                    href="https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0&p=f&t=lPJTcQFh3cY0hXXi-0"
+                    mockups</a> for a fictional food delivery mobile app, covering multiple user scenarios and
+                    workflows. </li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Self-Published Writer</h4>
+              <h5>May 2024 - July 2024</h5>
+              <ul>
+                <li>Self-published an <a
+                    href="https://www.amazon.ca/dp/B0DS18N4P2?ref=cm_sw_r_ffobk_cso_wa_apan_dp_6VAJMP50NDQE1A94C7T2_1&ref_=cm_sw_r_ffobk_cso_wa_apan_dp_6VAJMP50NDQE1A94C7T2_1&social_share=cm_sw_r_ffobk_cso_wa_apan_dp_6VAJMP50NDQE1A94C7T2_1&starsLeft=1&skipTwisterOG=1&bestFormat=true">
+                    Ebook</a> on Amazon</li>
+                <li>Learned how to use an e-book template from <a href="https://www.canva.com"> Canva</a> </li>
+                <li>Practiced image prompting on <a href="https://ideogram.ai/">Ideogram</a> and <a
+                    href="https://www.midjourney.com/">MidJourney</a> </li>
+
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>BreezeMaxWeb – Digital Marketing & Design Intern</h4>
+              <h5>May 2023 – July 2023</h5>
+              <p><em>Breeze Max Web, Ontario, Canada <a href="https://breezemaxweb.com">www.breezemaxweb.com/</a></em>
+              </p>
+              <ul>
+                <li>Created visually engaging Google Ads using Adobe Photoshop.</li>
+                <li>Utilized Adobe Photoshop to create wireframes that visually
+                  represented the layout and structure of websites.</li>
+                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                <li>Translated written briefs into visual design concepts that captured the
+                  essence of the project.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <!-- Section Title -->
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>A selection of my work across UX design, visual design, and digital marketing, from app prototypes and websites to campaign creative, branding, and video.</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter=".filter-alleffect" class="filter-active">All</li>
+              <li data-filter=".filter-certifications">Certifications</li>
+              <li data-filter=".filter-figma">Figma</li>
+              <li data-filter=".filter-images">Video Transitions & Layers</li>
+              <li data-filter=".filter-photoshop">Adobe Photoshop</li>
+              <li data-filter=".filter-illustrator">Adobe Illustrator</li>
+              <li data-filter=".filter-aftereffect">Adobe After Effects</li>
+              <li data-filter=".filter-photo">Photographs</li>
+              <!--               <a class="fontstyle" href="./Assets/Sketchbook.pdf">Sketches</a> -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Portfolio Container -->
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+
+
+          <!-- ALL Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-alleffect">
+            <div id="allEffectsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                  <div class="row">
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop1.jpg" class="d-block w-100" alt="Photoshop Project 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="This is a restaurant menu I made"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop4.jpg" class="d-block w-100" alt="Photoshop Project 4">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop4.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Emphasizing depth by visually integrating it as text descending into a well-like perspective"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/Zup24veFqCw?si=JuNNnWvRyEyKBo3i"
+                          title="After Effects Video 2" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Carousel Item 2 -->
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Video 4 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/CRTjxAvqmtE?si=ST-DHYr-czMiWb7l"
+                          title="After Effects Video 4" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/ocean.jpg" class="d-block w-100" alt="Illustrator Project 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/ocean.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Seafood logo with fish icon and clean typography"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Video 5 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+                <div class="portfolio-wrap">
+                  <iframe 
+                    class="d-block w-100" 
+                    src="https://www.youtube.com/embed/VIDEO_ID_5" 
+                    title="After Effects Video 5" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                  <div class="portfolio-links">
+                    <a href="https://www.youtube.com/embed/VIDEO_ID_5" data-gallery="portfolioGallery" class="portfolio-lightbox" title="After Effects Video 5"><i class="bx bx-plus"></i></a>
+                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div> -->
+                    <!-- Video 6 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+                <div class="portfolio-wrap">
+                  <iframe 
+                    class="d-block w-100" 
+                    src="https://www.youtube.com/embed/VIDEO_ID_6" 
+                    title="After Effects Video 6" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                  <div class="portfolio-links">
+                    <a href="https://www.youtube.com/embed/VIDEO_ID_6" data-gallery="portfolioGallery" class="portfolio-lightbox" title="After Effects Video 6"><i class="bx bx-plus"></i></a>
+                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#allEffectsCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#allEffectsCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-12 portfolio-item filter-figma">
+            <div id="figmaCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/fruit.png" class="d-block w-100" alt="Project 1">
+
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/fruit.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="View Fruit Hub App"><i class="bx bx-plus"></i></a>
+                          <a href="https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0"
+                            title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+
+                      </div>
+                      <a class="btn btn-primary mt-3"
+                        href="https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0"
+                        data-gallery="portfolioGallery">View Fruit Hub App</a>
+                    </div>
+
+
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/figmaproject.png" class="d-block w-100" alt="Project 1">
+
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/figmaproject.png" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="UBudget app (Individual)"><i class="bx bx-plus"></i></a>
+                          <a href="https://www.figma.com/design/NhUroVyKD9A4mt2vJOinbp/Student-budget-and-expense-tracker?node-id=0-1&t=aBNue4S20ef7PZYW-1"
+                            title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+
+                      </div>
+                      <a class="btn btn-primary mt-3"
+                        href="https://www.figma.com/design/NhUroVyKD9A4mt2vJOinbp/Student-budget-and-expense-tracker?node-id=0-1&t=aBNue4S20ef7PZYW-1"
+                        data-gallery="portfolioGallery">View UBudget App</a>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/figmaproject2.png" class="d-block w-100"
+                          alt="Illustrator Project 2">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/figmaproject2.png" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="ISOW website (Group)"><i class="bx bx-plus"></i></a>
+                          <a href="https://www.figma.com/design/k7R8DOzb8fh9tsjL9DLKaR/ISOW-Project--Copy-?node-id=80-201&t=BdbTcJNjwq6HCLdR-1"
+                            title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                      <a class="btn btn-primary mt-3"
+                        href="https://www.figma.com/design/k7R8DOzb8fh9tsjL9DLKaR/ISOW-Project--Copy-?node-id=80-201&t=BdbTcJNjwq6HCLdR-1"
+                        data-gallery="portfolioGallery">View ISOW project</a>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Portfolio Item 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/figma.jpg" class="d-block w-100" style="height:58%" alt="Dog Walking App">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/figma.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="View Dog Walking App"><i class="bx bx-plus"></i></a>
+                          <a href="https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&t=MAXCIYrpQxNXQv5U-1"
+                            target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                      <a class="btn btn-primary mt-3"
+                        href="https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&t=MAXCIYrpQxNXQv5U-1"
+                        target="_blank">View Dog Walking App</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#figmaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#figmaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+
+          <!-- Illustrator Tab Carousel (with 3 items per slide) -->
+          <div class="col-lg-12 portfolio-item filter-images">
+            <div id="imagesCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100" height="315" src="https://www.youtube.com/embed/CRTjxAvqmtE"
+                          title="After Effects Video 1" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100" height="315"
+                          src="https://www.youtube.com/embed/86hLAGPfCAY?si=A92lD1aplOCbnu8y"
+                          title="After Effects Video 1" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/img4.jpg" class="d-block w-100" alt="Illustrator Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/img4.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Prompt: Create a samurai in a forest setting during a cold night in a manga style"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/img5.jpg" class="d-block w-100" alt="Illustrator Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/img5.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Prompt: Create a samurai in a forest setting during a cold night in a shonen manga style"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#imagesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#imagesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+
+
+          <!-- Photoshop Tab Carousel (with 3 items per slide) -->
+          <div class="col-lg-12 portfolio-item filter-photoshop">
+            <div id="photoshopCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop1.jpg" class="d-block w-100" alt="Photoshop Project 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="This is a restaurant menu I made"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop2.jpg" class="d-block w-100" alt="Photoshop Project 2">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop2.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Promotional flyer showcasing a seafood cioppino special offer"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop3.jpg" class="d-block w-100" alt="Photoshop Project 3">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="KEEP PACE"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Portfolio Item 4 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop4.jpg" class="d-block w-100" alt="Photoshop Project 4">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop4.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Emphasizing depth by visually integrating it as text descending into a well-like perspective"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/boba.jpg" class="d-block w-100" alt="Photoshop Project 4">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/boba.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Boba tea with tapioca pearls in a vibrant presentation"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 5 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photoshop5.jpg" class="d-block w-100" alt="Photoshop Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photoshop5.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Logo"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- Portfolio Item 6 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/Orange Juice.jpg" class="d-block w-100"
+                          alt="Photoshop Project 6">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/Orange Juice.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="An orange juice bottle with fresh oranges"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+
+                    <!-- Portfolio Item 5 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/Mango.jpg" class="d-block w-100" alt="Photoshop Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/Mango.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title=" A peach with a bright golden hue"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 6 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/pepper.jpg" class="d-block w-100" alt="Photoshop Project 6">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/pepper.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="A bright green pepper with typography"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/Pizza.jpg" class="d-block w-100" alt="Photoshop Project 6">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/Pizza.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="A cheesy slice of pepperoni pizza"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+
+                <div class="carousel-item">
+                  <div class="row">
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/Strawberry.jpg" class="d-block w-100" alt="Photoshop Project 6">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/Strawberry.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="A sliced-up bursting strawberry"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#photoshopCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#photoshopCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Illustrator Tab Carousel (with 3 items per slide) -->
+          <div class="col-lg-12 portfolio-item filter-illustrator">
+            <div id="illustratorCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/ocean.jpg" class="d-block w-100" alt="Illustrator Project 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/ocean.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Seafood logo with fish icon and clean typography"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/bird.jpg" class="d-block w-100" alt="Illustrator Project 2">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/bird.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="A Multicolored bird logo symbolizing freedom and creativity"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/Ocean fresh 3.jpg" class="d-block w-100"
+                          alt="Illustrator Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/Ocean fresh 3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Minimalist seafood logo featuring waves and a cone and oceanic freshness"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/Ocean fresh 3.jpg" class="d-block w-100"
+                          alt="Illustrator Project 5">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/Ocean fresh 3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox"
+                            title="Minimalist seafood logo featuring waves and a cone and oceanic freshness"><i
+                              class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#illustratorCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#illustratorCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- After Effects Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-aftereffect">
+            <div id="afterEffectsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Video 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100" height="315"
+                          src="https://www.youtube.com/embed/txPtRznpClI?si=hGg9BRD3-lsCUjyy"
+                          title="After Effects Video 1" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Video 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/Zup24veFqCw?si=JuNNnWvRyEyKBo3i"
+                          title="After Effects Video 2" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Video 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/RqXbTGhtl30?si=WxvqL0TUO-UKcfnn"
+                          title="After Effects Video 3" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel Item 2 -->
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Video 4 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap1">
+                        <iframe class="d-block w-100"
+                          src="https://www.youtube.com/embed/CRTjxAvqmtE?si=ST-DHYr-czMiWb7l"
+                          title="After Effects Video 4" frameborder="0" height="315"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+
+                      </div>
+                    </div>
+                    <!-- Video 5 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+            <div class="portfolio-wrap">
+              <iframe 
+                class="d-block w-100" 
+                src="https://www.youtube.com/embed/VIDEO_ID_5" 
+                title="After Effects Video 5" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/VIDEO_ID_5" data-gallery="portfolioGallery" class="portfolio-lightbox" title="After Effects Video 5"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+                    <!-- Video 6 -->
+                    <!-- <div class="col-lg-4 col-md-6">
+            <div class="portfolio-wrap">
+              <iframe 
+                class="d-block w-100" 
+                src="https://www.youtube.com/embed/VIDEO_ID_6" 
+                title="After Effects Video 6" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/VIDEO_ID_6" data-gallery="portfolioGallery" class="portfolio-lightbox" title="After Effects Video 6"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#afterEffectsCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#afterEffectsCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Photography Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-photo">
+            <div id="photographyCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Carousel Item 1 -->
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Photo 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo2.jpg" class="d-block w-100" alt="Photography 2">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo2.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 2"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo3.jpg" class="d-block w-100" alt="Photography 3">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 3"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Photo 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/photo1.jpg" class="d-block w-100" alt="Photography 1">
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/photo1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Photography 1"><i class="bx bx-plus"></i></a>
+                          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Photo 2 -->
+
+                  </div>
+                </div>
+                <!-- Add more photos for Carousel Item 2 if needed -->
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#photographyCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#photographyCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+
+          <!-- Certifications Tab Carousel -->
+          <div class="col-lg-12 portfolio-item filter-certifications">
+            <div id="certificationsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <!-- Cert 1 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <div class="certification-card p-4 text-center"
+                          style="background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                          <i class="bx bx-certification" style="font-size: 48px; color: #0563bb;"></i>
+                          <h4 class="mt-3">Google Prompting Essentials</h4>
+                          <p>Professional Certification Sharing</p>
+                          <a href="https://coursera.org/share/08baa9ad009ada9348963743def5cdc5" target="_blank"
+                            class="btn btn-primary btn-sm mt-auto">View Certificate</a>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="https://coursera.org/share/08baa9ad009ada9348963743def5cdc5" target="_blank"
+                            title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Cert 2 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <div class="certification-card p-4 text-center"
+                          style="background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                          <i class="bx bx-certification" style="font-size: 48px; color: #0563bb;"></i>
+                          <h4 class="mt-3">Google Analytics</h4>
+                          <p>Google Skillshop Credential</p>
+                          <a href="https://skillshop.credential.net/a37b1236-6403-436c-9a14-752fb74512bd#acc.mUhznirg"
+                            target="_blank" class="btn btn-primary btn-sm mt-auto">View Certificate</a>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="https://skillshop.credential.net/a37b1236-6403-436c-9a14-752fb74512bd#acc.mUhznirg"
+                            target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Cert 3 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <div class="certification-card p-4 text-center"
+                          style="background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                          <i class="bx bx-certification" style="font-size: 48px; color: #0563bb;"></i>
+                          <h4 class="mt-3">Google Ads Apps</h4>
+                          <p>Google Skillshop Credential</p>
+                          <a href="https://skillshop.credential.net/2a0fb726-3ac8-45aa-a1d3-395fe5898c76#acc.yfkJAqaH"
+                            target="_blank" class="btn btn-primary btn-sm mt-auto">View Certificate</a>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="https://skillshop.credential.net/2a0fb726-3ac8-45aa-a1d3-395fe5898c76#acc.yfkJAqaH"
+                            target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row">
+                    <!-- Cert 4 -->
+                    <div class="col-lg-4 col-md-6">
+                      <div class="portfolio-wrap">
+                        <div class="certification-card p-4 text-center"
+                          style="background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                          <i class="bx bx-certification" style="font-size: 48px; color: #0563bb;"></i>
+                          <h4 class="mt-3">Claude AI UI/UX: Complete Workflow from Brief to Figma</h4>
+                          <p>Udemy Credential</p>
+                          <a href="https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed" target="_blank"
+                            class="btn btn-primary btn-sm mt-auto">View Certificate</a>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="assets/img/portfolio/claude-ai-certificate.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Claude AI UI/UX: Complete Workflow from Brief to Figma"><i class="bx bx-plus"></i></a>
+                          <a href="https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed" target="_blank"
+                            title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#certificationsCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#certificationsCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Add similar carousels for After Effects and Photography Tabs -->
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>If you wish to reach out to me please fill out the form below.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Burlington, Ontario, Canada</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>kamboehardev@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 289 838 5809</p>
+              </div>
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92793.56933689487!2d-79.92249155185142!3d43.381225797742076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b63d2965d93b7%3A0xa44a27764c2b554f!2sBurlington%2C%20ON!5e0!3m2!1sen!2sca!4v1704718680445!5m2!1sen!2sca"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initially show only the 'allEffectsCarousel'
+      document.querySelectorAll(".portfolio-item .carousel").forEach(function (carousel) {
+        carousel.style.display = "none";
+      });
+      document.querySelector("#allEffectsCarousel").style.display = "block";
+
+      // Add event listener for filter buttons
+      document.querySelectorAll("#portfolio-flters li").forEach(function (filterBtn) {
+        filterBtn.addEventListener("click", function () {
+          // Remove active class from all buttons
+          document.querySelectorAll("#portfolio-flters li").forEach(function (btn) {
+            btn.classList.remove("filter-active");
+          });
+
+          // Add active class to the clicked button
+          this.classList.add("filter-active");
+
+          // Get the filter class
+          const filterClass = this.getAttribute("data-filter");
+
+          // Show/hide carousels based on the selected filter
+          document.querySelectorAll(".portfolio-item .carousel").forEach(function (carousel) {
+            carousel.style.display = "none"; // Hide all carousels
+          });
+
+          if (filterClass === ".filter-alleffect") {
+            document.querySelector("#allEffectsCarousel").style.display = "block";
+          } else if (filterClass === ".filter-photoshop") {
+            document.querySelector("#photoshopCarousel").style.display = "block";
+          } else if (filterClass === ".filter-illustrator") {
+            document.querySelector("#illustratorCarousel").style.display = "block";
+          } else if (filterClass === ".filter-aftereffect") {
+            document.querySelector("#afterEffectsCarousel").style.display = "block";
+          } else if (filterClass === ".filter-photo") {
+            document.querySelector("#photographyCarousel").style.display = "block";
+          } else if (filterClass === ".filter-images") {
+            document.querySelector("#imagesCarousel").style.display = "block";
+          } else if (filterClass === ".filter-figma") {
+            document.querySelector("#figmaCarousel").style.display = "block";
+          } else if (filterClass === ".filter-certifications") {
+            document.querySelector("#certificationsCarousel").style.display = "block";
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
