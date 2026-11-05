@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hardev Kamboe — UX Designer &amp; Digital Marketer</title>
+<meta name="description" content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries.">
+<meta property="og:title" content="Hardev Kamboe Portfolio Website">
+<meta property="og:description" content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries.">
+<meta property="og:image" content="https://kamboe.com/assets/img/hero-bg.jpg">
+<meta property="og:url" content="https://www.kamboe.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kamboe.com/assets/img/hero-bg.jpg">
+<link rel="icon" href="https://kamboe.com/assets/img/profile-img.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a designer's canvas — sections are "frames" on a dotted artboard, selected with Figma-style handles */
+:root{
+  --bg:#F2F3F5; --surface:#FFFFFF; --ink:#12141A; --muted:#5B6170; --line:#DADDE3;
+  --accent:#2E5BFF; --accent-ink:#FFFFFF; --dot:#C9CDD6; --soft:#E8ECFF;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Instrument Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r:14px; --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1014; --surface:#171A21; --ink:#ECEEF3; --muted:#9AA1B2; --line:#2A2F3A;
+  --accent:#6F8CFF; --accent-ink:#0E1014; --dot:#262B35; --soft:#1C2340; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1014; --surface:#171A21; --ink:#ECEEF3; --muted:#9AA1B2; --line:#2A2F3A;
+  --accent:#6F8CFF; --accent-ink:#0E1014; --dot:#262B35; --soft:#1C2340; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--f-body);
+  background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:22px 22px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .4s,color .4s}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em}
+.label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;padding-block:14px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:color-mix(in oklab,var(--surface) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:1.1rem}
+.brand img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.92rem;padding:8px 14px;border-radius:999px;color:var(--muted);transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);background:var(--soft)}
+.nav-actions{display:flex;gap:6px;align-items:center}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:.25s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent);transform:rotate(-8deg)}
+.icon-btn svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;border:0;cursor:pointer;font:600 .95rem var(--f-body);transition:transform .25s var(--ease),box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--accent)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ink);box-shadow:none}
+.menu-btn{display:none}
+@media (max-width:860px){
+  .menu-btn{display:grid}
+  .nav-links{position:fixed;inset:76px max(16px,env(safe-area-inset-right,0px)) auto max(16px,env(safe-area-inset-left,0px));flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:10px;
+    opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:.3s var(--ease);box-shadow:0 20px 40px -20px rgba(0,0,0,.3)}
+  .nav-links.open{opacity:1;transform:none;pointer-events:auto}
+  .nav-links a{display:block;padding:12px 16px;font-size:1rem}
+  .nav-cta{display:none}
+}
+
+/* frame (figma selection) */
+.frame{position:relative}
+.frame-tag{position:absolute;top:-24px;left:0;font-family:var(--f-mono);font-size:.7rem;color:var(--accent);white-space:nowrap}
+.sel{position:absolute;inset:-1px;border:1.5px solid var(--accent);pointer-events:none;border-radius:inherit}
+.sel i{position:absolute;width:9px;height:9px;background:var(--surface);border:1.5px solid var(--accent)}
+.sel i:nth-child(1){top:-5px;left:-5px}.sel i:nth-child(2){top:-5px;right:-5px}
+.sel i:nth-child(3){bottom:-5px;left:-5px}.sel i:nth-child(4){bottom:-5px;right:-5px}
+.sel b{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);font:500 .66rem var(--f-mono);padding:2px 7px;border-radius:4px;white-space:nowrap}
+
+/* hero */
+.hero{padding-block:48px 72px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.85rem;color:var(--muted)}
+.pulse{width:10px;height:10px;border-radius:50%;background:#1DB954;box-shadow:0 0 0 0 rgba(29,185,84,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(29,185,84,0)}100%{box-shadow:0 0 0 0 rgba(29,185,84,0)}}
+.hero h1{font-size:clamp(3rem,9vw,7.4rem);font-weight:800;letter-spacing:-.04em;margin-top:22px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line span{display:inline-block;animation:rise 1s var(--ease) both}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s;color:var(--accent)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.typed-row{margin-top:22px;font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--muted)}
+.typed{color:var(--ink);font-weight:600;border-right:2px solid var(--accent);padding-right:4px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{border-color:transparent}}
+.hero-lead{margin-top:18px;max-width:52ch;color:var(--muted)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.socials{display:flex;gap:10px;margin-top:28px}
+.hero-photo{border-radius:28px;aspect-ratio:4/5;max-width:100%;animation:pop 1.1s .25s var(--ease) both}
+.hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:28px}
+@keyframes pop{from{opacity:0;transform:scale(.94) rotate(-2deg)}to{opacity:1;transform:none}}
+.chip-float{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:0 18px 36px -20px rgba(0,0,0,.35);font-size:.82rem;animation:float 6s ease-in-out infinite}
+.chip-float strong{display:block;font-family:var(--f-display);font-size:1.05rem}
+.chip-a{left:-34px;top:16%}
+.chip-b{right:-24px;bottom:16%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:56px}
+  .hero-photo{max-width:340px;justify-self:center;width:100%}
+  .chip-a{left:-12px}.chip-b{right:-12px}
+}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding-block:16px}
+.marquee-track{display:flex;gap:40px;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--f-display);font-size:1.35rem;font-weight:600;white-space:nowrap;display:flex;align-items:center;gap:40px}
+.marquee span::after{content:"✦";color:var(--accent);font-size:.9rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section.block{padding-block:96px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;letter-spacing:-.03em}
+.sec-head p{max-width:46ch;color:var(--muted)}
+
+/* portfolio */
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:32px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.filters::-webkit-scrollbar{display:none}
+.filter{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:9px 16px;border-radius:999px;font:500 .9rem var(--f-body);cursor:pointer;transition:.25s;display:flex;gap:8px;align-items:center}
+.filter em{font:500 .7rem var(--f-mono);font-style:normal;opacity:.7}
+.filter:hover{color:var(--ink);border-color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{columns:3 300px;column-gap:20px}
+.card{break-inside:avoid;margin-bottom:28px;position:relative;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);cursor:pointer;transition:transform .45s var(--ease),opacity .35s,box-shadow .35s;display:block;width:100%;text-align:left;padding:0;color:inherit;font:inherit}
+.card.hide{display:none}
+.card.enter{animation:cardIn .55s var(--ease) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-4px);box-shadow:0 26px 44px -28px rgba(18,20,26,.45)}
+.card .sel{opacity:0;transition:opacity .2s;border-radius:var(--r)}
+.card:hover .sel,.card:focus-visible .sel{opacity:1}
+.card:focus-visible{outline:none}
+.thumb{position:relative;overflow:hidden;border-radius:var(--r) var(--r) 0 0;background:var(--soft)}
+.thumb img{width:100%;height:auto;transition:transform .7s var(--ease)}
+.card:hover .thumb img{transform:scale(1.05)}
+.thumb.video{aspect-ratio:16/9}
+.thumb.video img{height:100%;object-fit:cover}
+.play{position:absolute;inset:0;display:grid;place-items:center}
+.play span{width:62px;height:62px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;transition:transform .35s var(--ease);box-shadow:0 10px 30px -8px rgba(0,0,0,.5)}
+.card:hover .play span{transform:scale(1.12)}
+.meta{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px}
+.meta h3{font-size:1.08rem;font-weight:600;font-family:var(--f-body)}
+.meta p{font-size:.88rem;color:var(--muted);line-height:1.5}
+.meta .label{display:flex;justify-content:space-between;gap:8px}
+.cert{padding:22px;border-radius:var(--r);background:linear-gradient(140deg,var(--soft),var(--surface))}
+.cert .seal{width:52px;height:52px;border-radius:50%;border:1.5px dashed var(--accent);display:grid;place-items:center;color:var(--accent);margin-bottom:16px}
+.cert h3{font-family:var(--f-display);font-size:1.35rem;font-weight:600;margin-bottom:6px}
+.ext{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-weight:600;font-size:.88rem;color:var(--accent);text-decoration:none}
+.ext:hover{text-decoration:underline}
+.empty{color:var(--muted)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.about-photo{border-radius:24px;overflow:hidden;aspect-ratio:1;max-width:100%}
+.about-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:transform .8s var(--ease)}
+.about-photo:hover img{transform:scale(1.04)}
+.about h3{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:600;margin-bottom:8px}
+.about .bio{margin-top:20px;color:var(--muted);max-width:64ch}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:28px;border-top:1px solid var(--line)}
+.facts div{padding:14px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px;min-width:0}
+.facts div:nth-child(odd){padding-right:16px}
+.facts dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.facts dt{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.stat strong{font-family:var(--f-display);font-size:2rem;font-weight:800;display:block;font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted)}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:380px}}
+@media (max-width:480px){.facts{grid-template-columns:1fr}.facts div:nth-child(odd){padding-right:0}.stats{grid-template-columns:1fr 1fr 1fr}.stat strong{font-size:1.5rem}}
+
+/* resume */
+.resume-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.summary-card{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.summary-card h3{font-size:1.8rem;font-weight:800}
+.summary-card .quote{font-style:italic;color:var(--muted);margin-top:12px}
+.summary-card ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px;font-size:.93rem}
+.summary-card li{display:flex;gap:10px;align-items:center}
+.summary-card li svg{width:16px;height:16px;color:var(--accent);flex:none}
+.edu{margin-top:26px;padding-top:22px;border-top:1px dashed var(--line);display:grid;gap:18px}
+.edu h4{font-family:var(--f-body);font-size:1rem;font-weight:600}
+.edu p{font-size:.9rem;color:var(--muted);margin-top:4px}
+.timeline{position:relative;list-style:none;margin:0;padding:0 0 0 28px}
+.timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline .fill{position:absolute;left:6px;top:8px;width:2px;background:var(--accent);height:0;transition:height .2s linear}
+.tl-item{position:relative;padding-bottom:40px}
+.tl-item::before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl-item .when{font-family:var(--f-mono);font-size:.74rem;color:var(--accent);letter-spacing:.04em}
+.tl-item h4{font-size:1.3rem;font-weight:600;margin-top:6px}
+.tl-item .org{color:var(--muted);font-size:.9rem;margin-top:4px}
+.tl-item ul{margin:12px 0 0;padding-left:18px;color:var(--muted);display:grid;gap:6px;font-size:.95rem}
+.tl-item a{color:var(--accent)}
+@media (max-width:860px){.resume-grid{grid-template-columns:1fr}.summary-card{position:static}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.info-card{background:var(--ink);color:var(--bg);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:22px;position:relative;overflow:hidden}
+.info-card::after{content:"";position:absolute;right:-80px;bottom:-80px;width:240px;height:240px;border-radius:50%;background:var(--accent);opacity:.9;animation:float 8s ease-in-out infinite}
+.info-row{display:flex;gap:14px;align-items:flex-start;position:relative;z-index:1}
+.info-row .ico{width:42px;height:42px;border-radius:12px;border:1px solid color-mix(in oklab,var(--bg) 25%,transparent);display:grid;place-items:center;flex:none}
+.info-row .ico svg{width:18px;height:18px}
+.info-row h4{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:400;opacity:.7}
+.info-row a,.info-row p{font-size:1.05rem;font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.map{position:relative;z-index:1;border-radius:16px;overflow:hidden;aspect-ratio:16/10;max-width:100%;border:1px solid color-mix(in oklab,var(--bg) 20%,transparent)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.3)}
+form.contact{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:32px;display:grid;gap:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.field input,.field textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 14px;transition:.2s;width:100%}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--soft)}
+.field textarea{min-height:150px;resize:vertical}
+.form-note{font-size:.88rem;color:var(--muted)}
+.form-note.ok{color:#1A9E4B}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.row2{grid-template-columns:1fr}form.contact,.info-card{padding:22px}}
+
+/* footer */
+footer{padding-block:48px 40px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot-big{font-family:var(--f-display);font-weight:800;font-size:clamp(2.6rem,10vw,8rem);letter-spacing:-.05em;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--ink);margin-bottom:28px;transition:color .5s}
+.foot-big:hover{color:var(--accent);-webkit-text-stroke-color:var(--accent)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,9,12,.92);display:flex;align-items:center;justify-content:center;padding:max(60px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(80px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.open{opacity:1;pointer-events:auto}
+.lb-stage{max-width:min(1100px,100%);max-height:100%;width:100%;display:flex;justify-content:center;transform:scale(.96);transition:transform .35s var(--ease)}
+.lb.open .lb-stage{transform:none}
+.lb-stage img{max-height:78vh;width:auto;border-radius:10px}
+.lb-stage .vid{width:100%;aspect-ratio:16/9;max-width:100%}
+.lb-stage iframe{width:100%;height:100%;border:0;border-radius:10px}
+.lb-cap{position:absolute;bottom:max(22px,env(safe-area-inset-bottom,0px));left:16px;right:16px;text-align:center;color:#E9ECF2;font-size:.95rem}
+.lb-cap .mono{color:#9FB2FF;display:block;margin-bottom:4px}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.lb button:hover{background:#fff;color:#000}
+.lb-close{top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px))}
+.lb-prev{left:max(14px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb-next{right:max(14px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+@media (max-width:600px){.lb-prev,.lb-next{top:auto;bottom:max(64px,env(safe-area-inset-bottom,0px));transform:none}}
+
+.to-top{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));z-index:40;opacity:0;transform:translateY(16px);transition:.3s;pointer-events:none}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+
+/* reveal — only applied to elements below the fold at load */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <nav class="nav-inner" aria-label="Main">
+      <a class="brand" href="#hero"><img src="https://kamboe.com/assets/img/profile-img.jpg" alt="">Hardev Kamboe</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a class="btn nav-cta" href="#contact">Let's talk</a>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-eyebrow"><span class="pulse"></span>Open to UX &amp; digital marketing roles · GTA</span>
+      <h1><span class="line"><span>Hardev</span></span><span class="line"><span>Kamboe</span></span></h1>
+      <p class="typed-row">I'm a <span class="typed" id="typed">UX Designer</span></p>
+      <p class="hero-lead">Fourth-year UX Design student at Wilfrid Laurier University, working where user research, design and campaign data meet.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#portfolio">View my work
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost" href="https://kamboe.com/hardev-kamboe-resume.pdf" target="_blank" rel="noopener">Download resume</a>
+      </div>
+      <div class="socials">
+        <a class="icon-btn" href="https://www.instagram.com/hardev__k/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/hardev-kamboe-882523258/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a>
+        <a class="icon-btn" href="mailto:kamboehardev@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </div>
+    <div class="frame hero-photo">
+      <span class="frame-tag">Frame · profile.jpg</span>
+      <img src="https://kamboe.com/assets/img/profile-img.jpg" alt="Portrait of Hardev Kamboe" loading="eager">
+      <span class="sel"><i></i><i></i><i></i><i></i><b>UX Designer &amp; Digital Marketer</b></span>
+      <div class="chip-float chip-a"><span class="label">Intern · 2026</span><strong>TD Bank Group</strong></div>
+      <div class="chip-float chip-b"><span class="label">BDes · 2027</span><strong>Wilfrid Laurier</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="label">Selected work</span><h2>Portfolio</h2></div>
+      <p>A selection of my work across UX design, visual design, and digital marketing, from app prototypes and websites to campaign creative, branding, and video.</p>
+    </div>
+    <div class="filters" id="filters" role="toolbar" aria-label="Filter portfolio by category"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="block about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="label">Who I am</span><h2>About</h2></div>
+      <p>A fourth-year UX Design student at Wilfrid Laurier University, seeking opportunities in UX design and digital marketing across the Greater Toronto Area.</p>
+    </div>
+    <div class="about-grid">
+      <div class="frame about-photo reveal"><img src="https://kamboe.com/assets/img/profile-img.jpg" alt="Hardev Kamboe" loading="lazy"></div>
+      <div class="reveal">
+        <h3>UX Designer &amp; Digital Marketer</h3>
+        <p class="label">Currently studying at Wilfrid Laurier University.</p>
+        <p class="bio">I work where design meets data. As a Digital Performance Marketing intern at TD Bank Group, I analyzed paid search, social, and display campaigns across the funnel, wrote weekly performance recaps, and turned App Store reviews and focus group feedback into UX recommendations. Before that, at Breeze Max Web, I designed Google Ads creative and website wireframes, and I've used Design Thinking and Figma to build more intuitive user journeys for projects like ISOW. I'm looking to bring both skill sets to a team that cares about how users experience a brand, and how that shows up in the numbers.</p>
+        <dl class="facts">
+          <div><dt>Website</dt><dd>www.kamboe.com</dd></div>
+          <div><dt>Degree</dt><dd>Undergraduate</dd></div>
+          <div><dt>Phone</dt><dd>+1 289 838 5809</dd></div>
+          <div><dt>Email</dt><dd>kamboehardev@gmail.com</dd></div>
+          <div><dt>City</dt><dd>Toronto, Canada</dd></div>
+          <div><dt>Focus</dt><dd>UX · Performance marketing</dd></div>
+        </dl>
+        <div class="stats">
+          <div class="stat"><strong data-count="20">0</strong><span>Screens in Barkyard prototype</span></div>
+          <div class="stat"><strong data-count="4">0</strong><span>Figma app &amp; web projects</span></div>
+          <div class="stat"><strong data-count="4">0</strong><span>Certifications earned</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="label">Experience</span><h2>Resume</h2></div>
+      <p>Below is a brief summary highlighting my professional attributes. <a href="https://kamboe.com/hardev-kamboe-resume.pdf" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">You can download my resume here.</a></p>
+    </div>
+    <div class="resume-grid">
+      <aside class="summary-card reveal">
+        <span class="label">Summary</span>
+        <h3>Hardev Kamboe</h3>
+        <p class="quote">UX Design student with paid digital performance marketing experience at TD, working where user research, design and campaign data meet.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Toronto, Ontario</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>289-838-5809</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>kamboehardev@gmail.com</li>
+        </ul>
+        <div class="edu">
+          <span class="label">Education</span>
+          <div>
+            <span class="mono" style="color:var(--accent)">2022 – Expected 2027</span>
+            <h4>Bachelor of Design (BDes) in User Experience Design</h4>
+            <p>Wilfrid Laurier University – Brantford ON. This <a href="https://www.wlu.ca/programs/liberal-arts/undergraduate/user-experience-design-bdes/index.html" target="_blank" rel="noopener" style="color:var(--accent)">program</a> emphasizes fostering design thinking and practical skills for creating impactful user experiences.</p>
+          </div>
+          <div>
+            <span class="mono" style="color:var(--accent)">2018 – 2022</span>
+            <h4>MM Robinson High School</h4>
+            <p>High School Diploma Achieved</p>
+          </div>
+        </div>
+      </aside>
+
+      <ol class="timeline" id="timeline">
+        <span class="fill" id="tlFill"></span>
+        <li class="tl-item reveal">
+          <span class="when">Summer Internship 2026</span>
+          <h4>TD Bank Group — Digital Performance Marketing Wealth Intern/Co-op</h4>
+          <p class="org">TD Easy Trade Investing | TD Marketing</p>
+          <ul>
+            <li>Supported TD Easy Trade digital performance marketing campaigns across paid search, paid social, display, programmatic, and public site channels.</li>
+            <li>Analyzed campaign performance across Awareness, Consideration, and Acquisition using KPIs including CTR, LPVs, CPLPV, app downloads, and account opens.</li>
+            <li>Prepared weekly Growth Pod recaps summarizing channel performance, creative insights, blockers, stakeholder updates, and next steps.</li>
+            <li>Reviewed customer journey, app onboarding, and intern focus group feedback to identify UX friction points and improvement opportunities.</li>
+            <li>Analyzed customer reviews from the App Store to identify recurring usability issues, pain points, and customer needs, translating findings into actionable UX recommendations.</li>
+            <li>Contributed recommendations on audience strategy, budget allocation, retargeting, and creative testing to improve campaign efficiency.</li>
+          </ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="when">Fall 2026</span>
+          <h4>Barkyard – Dog Daycare &amp; Grooming App (Claude Design)</h4>
+          <ul>
+            <li>Took a fictional app from creative brief to a ~20-screen high-fidelity <a href="https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&amp;t=MAXCIYrpQxNXQv5U-1" target="_blank" rel="noopener">Figma prototype</a> and developer handoff using an AI-assisted Claude Design workflow (<a href="https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed" target="_blank" rel="noopener">certificate</a>).</li>
+          </ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="when">July 2025 – August 2025</span>
+          <h4>Mobile App Design Case Study</h4>
+          <ul>
+            <li>Completed a short <a href="https://www.contentcreator.com/14-day-smartphone-filmmaker-course" target="_blank" rel="noopener">smartphone filmmaker course</a> in special effects.</li>
+            <li>Designed a complete set of designs <a href="https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0&amp;p=f&amp;t=lPJTcQFh3cY0hXXi-0" target="_blank" rel="noopener">for a fictional food delivery mobile app</a>, covering multiple user scenarios and workflows.</li>
+          </ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="when">May 2024 – July 2024</span>
+          <h4>Self-Published Writer</h4>
+          <ul>
+            <li>Self-published an <a href="https://www.amazon.ca/dp/B0DS18N4P2" target="_blank" rel="noopener">Ebook</a> on Amazon.</li>
+            <li>Learned how to use an e-book template from <a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a>.</li>
+            <li>Practiced image prompting on <a href="https://ideogram.ai/" target="_blank" rel="noopener">Ideogram</a> and <a href="https://www.midjourney.com/" target="_blank" rel="noopener">MidJourney</a>.</li>
+          </ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="when">May 2023 – July 2023</span>
+          <h4>BreezeMaxWeb – Digital Marketing &amp; Design Intern</h4>
+          <p class="org">Breeze Max Web, Ontario, Canada · <a href="https://breezemaxweb.com" target="_blank" rel="noopener">www.breezemaxweb.com</a></p>
+          <ul>
+            <li>Created visually engaging Google Ads using Adobe Photoshop.</li>
+            <li>Utilized Adobe Photoshop to create wireframes that visually represented the layout and structure of websites.</li>
+            <li>Recommended and consulted with clients on the most appropriate graphic design.</li>
+            <li>Translated written briefs into visual design concepts that captured the essence of the project.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="label">Say hello</span><h2>Contact</h2></div>
+      <p>If you wish to reach out to me please fill out the form below.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="info-card reveal">
+        <div class="info-row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><h4>Location</h4><p>Burlington, Ontario, Canada</p></div></div>
+        <div class="info-row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><h4>Email</h4><a href="mailto:kamboehardev@gmail.com">kamboehardev@gmail.com</a></div></div>
+        <div class="info-row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+          <div><h4>Call</h4><a href="tel:+12898385809">+1 289 838 5809</a></div></div>
+        <div class="map">
+          <iframe title="Map of Burlington, Ontario" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92793.56933689487!2d-79.92249155185142!3d43.381225797742076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b63d2965d93b7%3A0xa44a27764c2b554f!2sBurlington%2C%20ON!5e0!3m2!1sen!2sca!4v1704718680445!5m2!1sen!2sca"></iframe>
+        </div>
+      </div>
+      <form class="contact reveal" id="contactForm" novalidate>
+        <div class="row2">
+          <div class="field"><label for="cf-name">Your Name</label><input id="cf-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="cf-email">Your Email</label><input id="cf-email" name="email" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="field"><label for="cf-subject">Subject</label><input id="cf-subject" name="subject" required></div>
+        <div class="field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" required></textarea></div>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <button class="btn" type="submit">Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+          <p class="form-note" id="formNote" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-big">Let's build it.</div>
+    <div class="foot">
+      <p class="mono">© <span id="yr">2026</span> Hardev Kamboe · kamboe.com</p>
+      <div class="socials" style="margin:0">
+        <a class="icon-btn" href="https://www.instagram.com/hardev__k/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/hardev-kamboe-882523258/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#hero" class="icon-btn to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <div class="lb-stage" id="lbStage"></div>
+  <button class="lb-next" id="lbNext" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+/* ============================================================
+   ASSET BASE: images come from your existing server folder
+   "assets/img/...". Keep "" when this file is uploaded to kamboe.com.
+   To preview locally (double-click), set to "https://kamboe.com/".
+   ============================================================ */
+const ASSET_BASE = "https://kamboe.com/"; // images load from the live site, wherever this file is opened
+
+const P = "assets/img/portfolio/";
+const CATS = [
+  {id:"all", name:"All"},
+  {id:"cert", name:"Certifications"},
+  {id:"figma", name:"Figma"},
+  {id:"vtl", name:"Video Transitions & Layers"},
+  {id:"ps", name:"Adobe Photoshop"},
+  {id:"ai", name:"Adobe Illustrator"},
+  {id:"ae", name:"Adobe After Effects"},
+  {id:"photo", name:"Photographs"}
+];
+
+/* Every project from the current site (duplicates merged) */
+const ITEMS = [
+  // Figma
+  {type:"link", cats:["figma"], img:P+"fruit.png", title:"Fruit Hub App", desc:"Food delivery mobile app — multiple user scenarios and workflows.", url:"https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0", cta:"View Fruit Hub App"},
+  {type:"link", cats:["figma"], img:P+"figmaproject.png", title:"UBudget app (Individual)", desc:"Student budget and expense tracker.", url:"https://www.figma.com/design/NhUroVyKD9A4mt2vJOinbp/Student-budget-and-expense-tracker?node-id=0-1&t=aBNue4S20ef7PZYW-1", cta:"View UBudget App"},
+  {type:"link", cats:["figma"], img:P+"figmaproject2.png", title:"ISOW website (Group)", desc:"Group website project built with Design Thinking.", url:"https://www.figma.com/design/k7R8DOzb8fh9tsjL9DLKaR/ISOW-Project--Copy-?node-id=80-201&t=BdbTcJNjwq6HCLdR-1", cta:"View ISOW project"},
+  {type:"link", cats:["figma"], img:P+"figma.jpg", title:"Dog Walking App", desc:"Barkyard — ~20-screen high-fidelity prototype.", url:"https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&t=MAXCIYrpQxNXQv5U-1", cta:"View Dog Walking App"},
+  // Video transitions & layers
+  {type:"video", cats:["vtl","ae"], yt:"CRTjxAvqmtE", title:"Video transition edit", desc:"Transitions and layered effects."},
+  {type:"video", cats:["vtl"], yt:"86hLAGPfCAY", title:"Layered video edit", desc:"Transitions and layered effects."},
+  {type:"image", cats:["vtl"], img:P+"img4.jpg", title:"Samurai in a forest — manga", desc:"Prompt: Create a samurai in a forest setting during a cold night in a manga style"},
+  {type:"image", cats:["vtl"], img:P+"img5.jpg", title:"Samurai in a forest — shonen", desc:"Prompt: Create a samurai in a forest setting during a cold night in a shonen manga style"},
+  // Photoshop
+  {type:"image", cats:["ps"], img:P+"photoshop1.jpg", title:"Restaurant menu", desc:"This is a restaurant menu I made"},
+  {type:"image", cats:["ps"], img:P+"photoshop2.jpg", title:"Cioppino special flyer", desc:"Promotional flyer showcasing a seafood cioppino special offer"},
+  {type:"image", cats:["ps"], img:P+"photoshop3.jpg", title:"KEEP PACE", desc:"KEEP PACE"},
+  {type:"image", cats:["ps"], img:P+"photoshop4.jpg", title:"Depth", desc:"Emphasizing depth by visually integrating it as text descending into a well-like perspective"},
+  {type:"image", cats:["ps"], img:P+"boba.jpg", title:"Boba tea", desc:"Boba tea with tapioca pearls in a vibrant presentation"},
+  {type:"image", cats:["ps"], img:P+"Orange%20Juice.jpg", title:"Orange juice", desc:"An orange juice bottle with fresh oranges"},
+  {type:"image", cats:["ps"], img:P+"Mango.jpg", title:"Golden peach", desc:"A peach with a bright golden hue"},
+  {type:"image", cats:["ps"], img:P+"pepper.jpg", title:"Green pepper", desc:"A bright green pepper with typography"},
+  {type:"image", cats:["ps"], img:P+"Pizza.jpg", title:"Pepperoni pizza", desc:"A cheesy slice of pepperoni pizza"},
+  {type:"image", cats:["ps"], img:P+"Strawberry.jpg", title:"Bursting strawberry", desc:"A sliced-up bursting strawberry"},
+  // Illustrator
+  {type:"image", cats:["ai"], img:P+"ocean.jpg", title:"Seafood logo", desc:"Seafood logo with fish icon and clean typography"},
+  {type:"image", cats:["ai"], img:P+"bird.jpg", title:"Bird logo", desc:"A multicolored bird logo symbolizing freedom and creativity"},
+  {type:"image", cats:["ai"], img:P+"Ocean%20fresh%203.jpg", title:"Ocean Fresh", desc:"Minimalist seafood logo featuring waves and a cone and oceanic freshness"},
+  // After Effects
+  {type:"video", cats:["ae"], yt:"txPtRznpClI", title:"After Effects piece 1", desc:"Motion work in Adobe After Effects."},
+  {type:"video", cats:["ae"], yt:"Zup24veFqCw", title:"After Effects piece 2", desc:"Motion work in Adobe After Effects."},
+  {type:"video", cats:["ae"], yt:"RqXbTGhtl30", title:"After Effects piece 3", desc:"Motion work in Adobe After Effects."},
+  // Photographs
+  {type:"image", cats:["photo"], img:P+"photo1.jpg", title:"Photography 1", desc:"Photograph"},
+  {type:"image", cats:["photo"], img:P+"photo2.jpg", title:"Photography 2", desc:"Photograph"},
+  {type:"image", cats:["photo"], img:P+"photo3.jpg", title:"Photography 3", desc:"Photograph"},
+  // Certifications
+  {type:"cert", cats:["cert"], img:P+"claude-ai-certificate.jpg", title:"Claude AI UI/UX: Complete Workflow from Brief to Figma", desc:"Udemy Credential", url:"https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed"},
+  {type:"cert", cats:["cert"], title:"Google Prompting Essentials", desc:"Professional Certification Sharing", url:"https://coursera.org/share/08baa9ad009ada9348963743def5cdc5"},
+  {type:"cert", cats:["cert"], title:"Google Analytics", desc:"Google Skillshop Credential", url:"https://skillshop.credential.net/a37b1236-6403-436c-9a14-752fb74512bd#acc.mUhznirg"},
+  {type:"cert", cats:["cert"], title:"Google Ads Apps", desc:"Google Skillshop Credential", url:"https://skillshop.credential.net/2a0fb726-3ac8-45aa-a1d3-395fe5898c76#acc.yfkJAqaH"}
+];
+const catName = id => (CATS.find(c => c.id === id) || {}).name || "";
+const src = p => ASSET_BASE + p;
+const ytThumb = id => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- Marquee ---------- */
+const TOOLS = ["Figma","UX Research","Adobe Photoshop","Adobe Illustrator","Adobe After Effects","Google Ads","Google Analytics","Paid Social","Design Thinking","Wireframing","Prototyping","Canva","MidJourney"];
+document.getElementById("marquee").innerHTML = [...TOOLS, ...TOOLS].map(t => `<span>${t}</span>`).join("");
+
+/* ---------- Portfolio ---------- */
+const grid = document.getElementById("grid");
+const filters = document.getElementById("filters");
+const arrow = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>`;
+
+function cardHTML(it, i){
+  const tag = catName(it.cats[0]);
+  const sel = `<span class="sel"><i></i><i></i><i></i><i></i><b>${esc(tag)}</b></span>`;
+  if (it.type === "cert") {
+    return `<article class="card" data-i="${i}" tabindex="0">
+      ${it.img ? `<div class="thumb"><img src="${src(it.img)}" alt="${esc(it.title)}" loading="lazy"></div>` : ""}
+      <div class="cert" style="${it.img ? 'border-radius:0 0 var(--r) var(--r)' : ''}">
+        ${it.img ? "" : `<div class="seal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg></div>`}
+        <span class="label">${esc(it.desc)}</span>
+        <h3>${esc(it.title)}</h3>
+        <a class="ext" href="${it.url}" target="_blank" rel="noopener">View Certificate ${arrow}</a>
+      </div>${sel}</article>`;
+  }
+  const isVid = it.type === "video";
+  const img = isVid ? ytThumb(it.yt) : src(it.img);
+  return `<article class="card" data-i="${i}" tabindex="0" role="button" aria-label="Open ${esc(it.title)}">
+    <div class="thumb ${isVid ? "video" : ""}">
+      <img src="${img}" alt="${esc(it.title)}" loading="lazy">
+      ${isVid ? `<span class="play"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>` : ""}
+    </div>
+    <div class="meta">
+      <span class="label"><span>${esc(tag)}</span><span>${isVid ? "Video" : it.type === "link" ? "Figma file" : "Image"}</span></span>
+      <h3>${esc(it.title)}</h3>
+      <p>${esc(it.desc)}</p>
+      ${it.type === "link" ? `<a class="ext" href="${it.url}" target="_blank" rel="noopener">${esc(it.cta)} ${arrow}</a>` : ""}
+    </div>${sel}</article>`;
+}
+grid.innerHTML = ITEMS.map(cardHTML).join("");
+const cards = [...grid.children];
+
+filters.innerHTML = CATS.map(c => {
+  const n = c.id === "all" ? ITEMS.length : ITEMS.filter(it => it.cats.includes(c.id)).length;
+  return `<button class="filter" data-f="${c.id}" aria-pressed="${c.id === "all"}">${esc(c.name)} <em>${n}</em></button>`;
+}).join("");
+
+let current = "all";
+function applyFilter(f){
+  current = f;
+  filters.querySelectorAll(".filter").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
+  let d = 0;
+  cards.forEach((c, i) => {
+    const show = f === "all" || ITEMS[i].cats.includes(f);
+    c.classList.toggle("hide", !show);
+    c.classList.remove("enter");
+    if (show) { void c.offsetWidth; c.style.animationDelay = (d++ * 45) + "ms"; c.classList.add("enter"); }
+  });
+}
+filters.addEventListener("click", e => { const b = e.target.closest(".filter"); if (b) applyFilter(b.dataset.f); });
+
+/* ---------- Lightbox ---------- */
+const lb = document.getElementById("lb"), stage = document.getElementById("lbStage"), cap = document.getElementById("lbCap");
+let lbList = [], lbPos = 0, lastFocus = null;
+function visibleMedia(){ return cards.filter(c => !c.classList.contains("hide")).map(c => +c.dataset.i).filter(i => ["image","video"].includes(ITEMS[i].type)); }
+function renderLB(){
+  const it = ITEMS[lbList[lbPos]];
+  const watch = it.type === "video" ? ` · <a href="https://www.youtube.com/watch?v=${it.yt}" target="_blank" rel="noopener" style="color:#9FB2FF">Watch on YouTube ↗</a>` : "";
+  const origin = /^https?:/.test(location.protocol) ? `&origin=${encodeURIComponent(location.origin)}` : "";
+  stage.innerHTML = it.type === "video"
+    ? `<div class="vid"><iframe src="https://www.youtube.com/embed/${it.yt}?autoplay=1&rel=0&playsinline=1${origin}" title="${esc(it.title)}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : `<img src="${src(it.img)}" alt="${esc(it.title)}">`;
+  cap.innerHTML = `<span class="mono">${esc(catName(it.cats[0]))} · ${lbPos + 1} / ${lbList.length}</span>${esc(it.desc)}${watch}`;
+}
+function openLB(i){
+  lbList = visibleMedia(); lbPos = Math.max(0, lbList.indexOf(i));
+  lastFocus = document.activeElement; lb.hidden = false;
+  requestAnimationFrame(() => lb.classList.add("open"));
+  document.body.style.overflow = "hidden"; renderLB(); document.getElementById("lbClose").focus();
+}
+function closeLB(){ lb.classList.remove("open"); document.body.style.overflow = ""; setTimeout(() => { lb.hidden = true; stage.innerHTML = ""; }, 300); lastFocus && lastFocus.focus(); }
+function step(n){ lbPos = (lbPos + n + lbList.length) % lbList.length; renderLB(); }
+grid.addEventListener("click", e => {
+  if (e.target.closest("a")) return;
+  const c = e.target.closest(".card"); if (!c) return;
+  const it = ITEMS[+c.dataset.i];
+  if (it.type === "link" || it.type === "cert") window.open(it.url, "_blank", "noopener");
+  /* YouTube refuses embeds on pages opened straight from disk (no website address), so open YouTube itself there */
+  else if (it.type === "video" && !/^https?:/.test(location.protocol)) window.open(`https://www.youtube.com/watch?v=${it.yt}`, "_blank", "noopener");
+  else openLB(+c.dataset.i);
+});
+grid.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("card")) { e.preventDefault(); e.target.click(); } });
+document.getElementById("lbClose").onclick = closeLB;
+document.getElementById("lbPrev").onclick = () => step(-1);
+document.getElementById("lbNext").onclick = () => step(1);
+lb.addEventListener("click", e => { if (e.target === lb) closeLB(); });
+document.addEventListener("keydown", e => {
+  if (lb.hidden) return;
+  if (e.key === "Escape") closeLB(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1);
+});
+let tx = null;
+lb.addEventListener("touchstart", e => tx = e.touches[0].clientX, {passive:true});
+lb.addEventListener("touchend", e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); tx = null; });
+
+/* ---------- Typed roles ---------- */
+const roles = ["UX Designer", "Digital Marketer", "Figma Prototyper", "Visual Designer", "Video Editor"];
+const typed = document.getElementById("typed");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!reduce) {
+  let r = 0, ch = roles[0].length, del = true;
+  (function tick(){
+    const word = roles[r];
+    ch += del ? -1 : 1; typed.textContent = word.slice(0, ch);
+    let wait = del ? 45 : 85;
+    if (!del && ch === word.length) { del = true; wait = 1800; }
+    else if (del && ch === 0) { del = false; r = (r + 1) % roles.length; wait = 300; }
+    setTimeout(tick, wait);
+  })();
+}
+
+/* ---------- Theme ---------- */
+const root = document.documentElement;
+try { const t = localStorage.getItem("kamboe-theme"); if (t) root.dataset.theme = t; } catch(e){}
+document.getElementById("themeBtn").onclick = () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("kamboe-theme", root.dataset.theme); } catch(e){}
+};
+
+/* ---------- Mobile menu & active link ---------- */
+const menuBtn = document.getElementById("menuBtn"), navLinks = document.getElementById("navLinks");
+menuBtn.onclick = () => { const o = navLinks.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); };
+navLinks.addEventListener("click", e => { if (e.target.tagName === "A") { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); } });
+
+const sections = [...document.querySelectorAll("main section[id]")];
+const links = [...navLinks.querySelectorAll("a")];
+const progress = document.getElementById("progress"), toTop = document.getElementById("toTop");
+const tl = document.getElementById("timeline"), tlFill = document.getElementById("tlFill");
+function onScroll(){
+  const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
+  toTop.classList.toggle("show", y > 700);
+  let cur = sections[0].id;
+  sections.forEach(s => { if (s.offsetTop - 140 <= y) cur = s.id; });
+  links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+  const r = tl.getBoundingClientRect();
+  const pct = Math.min(1, Math.max(0, (innerHeight * .6 - r.top) / r.height));
+  tlFill.style.height = (pct * (r.height - 16)) + "px";
+}
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+/* ---------- Reveal (only for things below the fold) & counters ---------- */
+if ("IntersectionObserver" in window && !reduce) {
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => {
+    if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); else io.observe(el);
+  });
+} else document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+
+const counters = document.querySelectorAll("[data-count]");
+const runCount = el => {
+  const end = +el.dataset.count; if (reduce) { el.textContent = end; return; }
+  const t0 = performance.now();
+  (function f(t){ const p = Math.min(1, (t - t0) / 1200); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(t0);
+};
+if ("IntersectionObserver" in window) {
+  const co = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } }), {threshold:.5});
+  counters.forEach(c => co.observe(c));
+} else counters.forEach(runCount);
+
+/* ---------- Card tilt (desktop) ---------- */
+if (!reduce && matchMedia("(hover:hover)").matches) {
+  grid.addEventListener("mousemove", e => {
+    const c = e.target.closest(".card"); if (!c) return;
+    const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    c.style.transform = `translateY(-4px) perspective(800px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+  });
+  grid.addEventListener("mouseout", e => { const c = e.target.closest(".card"); if (c && !c.contains(e.relatedTarget)) c.style.transform = ""; });
+}
+
+/* ---------- Contact form: opens the visitor's email app, pre-filled ---------- */
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, note = document.getElementById("formNote");
+  if (!f.checkValidity()) { note.className = "form-note"; note.textContent = "Please fill in every field with a valid email."; f.reportValidity(); return; }
+  const body = `${f.message.value}\n\n— ${f.name.value} (${f.email.value})`;
+  location.href = `mailto:kamboehardev@gmail.com?subject=${encodeURIComponent(f.subject.value)}&body=${encodeURIComponent(body)}`;
+  note.className = "form-note ok"; note.textContent = "Your email app should open with the message ready to send.";
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
