@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hardev Kamboe — UX Designer &amp; Digital Marketer</title>
+<meta name="description" content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries.">
+<meta property="og:title" content="Hardev Kamboe Portfolio Website">
+<meta property="og:description" content="Explore a curated collection of graphic design projects and creative works showcasing Hardev Kamboe's expertise in crafting compelling visual solutions across various mediums and industries.">
+<meta property="og:image" content="https://kamboe.com/assets/img/hero-bg.jpg">
+<meta property="og:url" content="https://www.kamboe.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kamboe.com/assets/img/hero-bg.jpg">
+<meta name="theme-color" content="#160F1A">
+<link rel="icon" href="https://kamboe.com/assets/img/profile-img.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,700;62..125,900&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a night-time "studio reel" — wide display type, a sticky category index beside a bento wall, accordions for experience */
+:root{
+  --bg:#160F1A; --bg2:#1F1724; --card:#271D2D; --ink:#F4ECE6; --muted:#A99BAE; --line:#3A2D40;
+  --hot:#FF8A5B; --hot-2:#FFC2A1; --plum:#8B5CF6;
+  --f-display:"Archivo", "Arial Narrow", Impact, sans-serif;
+  --f-body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"DM Mono", ui-monospace, Menlo, monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--f-display);line-height:.95;text-wrap:balance}
+p{margin:0}
+::selection{background:var(--hot);color:var(--bg)}
+:focus-visible{outline:2px solid var(--hot);outline-offset:4px}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.kicker{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hot)}
+.wide{font-stretch:125%;font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* preloader */
+.loader{position:fixed;inset:0;z-index:300;background:var(--hot);color:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:max(24px,env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px));transition:transform 1s var(--ease)}
+.loader.done{transform:translateY(-100%)}
+.loader .count{font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:clamp(5rem,22vw,18rem);line-height:.8;font-variant-numeric:tabular-nums}
+.loader .who{font-family:var(--f-mono);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between}
+
+/* cursor */
+.cursor{position:fixed;left:0;top:0;z-index:250;pointer-events:none;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--hot);mix-blend-mode:difference;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .3s;display:grid;place-items:center;color:var(--bg);font:500 .7rem var(--f-mono);text-transform:uppercase;letter-spacing:.08em}
+.cursor.big{width:84px;height:84px;margin:-42px 0 0 -42px;mix-blend-mode:normal}
+.cursor span{opacity:0;transition:opacity .2s}
+.cursor.big span{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor{display:none}}
+
+/* header */
+.top{position:fixed;top:0;left:0;right:0;z-index:90;padding-top:max(16px,env(safe-area-inset-top,0px));padding-bottom:16px;transition:transform .5s var(--ease),background .4s}
+.top.scrolled{background:color-mix(in oklab,var(--bg) 78%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.top.hidden{transform:translateY(-110%)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.mono-logo{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;text-decoration:none;font:900 1rem var(--f-display);font-stretch:125%;transition:.4s var(--ease)}
+.mono-logo:hover{background:var(--hot);border-color:var(--hot);color:var(--bg);transform:rotate(-12deg)}
+.top-mid{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);display:flex;gap:18px;align-items:center}
+.top-mid .dot{width:8px;height:8px;border-radius:50%;background:#5BE3A0;display:inline-block;margin-right:8px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.menu-toggle{display:flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:12px 18px 12px 22px;font:600 .9rem var(--f-body);cursor:pointer;transition:background .3s}
+.menu-toggle:hover{background:var(--hot)}
+.burger{width:18px;height:10px;position:relative}
+.burger i{position:absolute;left:0;right:0;height:2px;background:currentColor;transition:.4s var(--ease)}
+.burger i:first-child{top:0}.burger i:last-child{bottom:0}
+.menu-open .burger i:first-child{top:4px;transform:rotate(45deg)}
+.menu-open .burger i:last-child{bottom:4px;transform:rotate(-45deg)}
+@media (max-width:720px){.top-mid{display:none}}
+
+/* overlay menu */
+.overlay{position:fixed;inset:0;z-index:80;background:var(--bg2);clip-path:circle(0% at calc(100% - 70px) 40px);transition:clip-path .9s var(--ease);display:flex;align-items:center}
+.menu-open .overlay{clip-path:circle(150% at calc(100% - 70px) 40px)}
+.overlay .wrap{width:100%;display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:end;padding-block:120px 40px}
+.overlay ol{list-style:none;margin:0;padding:0;counter-reset:m}
+.overlay li{overflow:hidden}
+.overlay li a{display:flex;align-items:baseline;gap:18px;text-decoration:none;font-family:var(--f-display);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,8vw,6.5rem);line-height:1.02;transform:translateY(110%);transition:transform .8s var(--ease),color .3s}
+.overlay li a::before{counter-increment:m;content:"0" counter(m);font:500 .9rem var(--f-mono);color:var(--muted);transform:translateY(-1.6em)}
+.overlay li a:hover{color:var(--hot)}
+.menu-open .overlay li a{transform:none}
+.menu-open .overlay li:nth-child(2) a{transition-delay:.06s}.menu-open .overlay li:nth-child(3) a{transition-delay:.12s}
+.menu-open .overlay li:nth-child(4) a{transition-delay:.18s}.menu-open .overlay li:nth-child(5) a{transition-delay:.24s}
+.overlay aside{display:grid;gap:18px;color:var(--muted);font-size:.95rem}
+.overlay aside a{text-decoration:none;color:var(--ink)}
+.overlay aside a:hover{color:var(--hot)}
+@media (max-width:820px){.overlay .wrap{grid-template-columns:1fr}}
+
+/* hero */
+.hero{padding-top:140px;padding-bottom:40px;position:relative}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.hero h1{font-size:clamp(3.4rem,13.5vw,13rem);font-stretch:125%;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.84}
+.hero h1 .row{display:flex;align-items:center;gap:.12em;flex-wrap:nowrap}
+.hero h1 .ch{display:inline-block;transform:translateY(100%) rotate(6deg);opacity:0}
+.ready .hero h1 .ch{animation:chIn 1s var(--ease) forwards;animation-delay:calc(var(--i) * 40ms + .2s)}
+@keyframes chIn{to{transform:none;opacity:1}}
+.hero h1 .clip{overflow:hidden;display:inline-flex;padding-bottom:.04em}
+.hero-face{width:.9em;height:.9em;border-radius:50%;overflow:hidden;flex:none;border:3px solid var(--hot);transform:scale(0);transition:transform 1s .9s var(--ease)}
+.ready .hero-face{transform:scale(1)}
+.hero-face img{width:100%;height:100%;object-fit:cover}
+.hero-sub{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-top:40px}
+.role{font-family:var(--f-display);font-stretch:100%;font-weight:700;font-size:clamp(1.4rem,3.4vw,2.6rem);line-height:1.1}
+.role .swap{display:inline-grid;vertical-align:bottom;overflow:hidden;height:1.1em;color:var(--hot)}
+.role .swap span{grid-area:1/1;transform:translateY(110%);transition:transform .7s var(--ease)}
+.role .swap span.on{transform:none}
+.role .swap span.out{transform:translateY(-110%)}
+.hero-sub p.lead{color:var(--muted);max-width:44ch;margin-top:16px}
+.scroll-cue{width:120px;height:120px;position:relative;flex:none}
+.scroll-cue svg{width:100%;height:100%;animation:spin 14s linear infinite}
+.scroll-cue text{font:500 9.5px var(--f-mono);letter-spacing:.32em;fill:var(--ink);text-transform:uppercase}
+.scroll-cue b{position:absolute;inset:0;display:grid;place-items:center;color:var(--hot);font-size:1.6rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:720px){.hero-sub{grid-template-columns:1fr}.scroll-cue{width:96px;height:96px}}
+
+/* reel strip */
+.reel{margin-top:60px;overflow:hidden;transform:rotate(-2deg);padding-block:12px}
+.reel-track{display:flex;gap:14px;width:max-content;animation:reel 45s linear infinite}
+.reel:hover .reel-track{animation-play-state:paused}
+.reel img{height:200px;width:auto;border-radius:12px;filter:grayscale(1) contrast(1.05);transition:filter .5s}
+.reel img:hover{filter:none}
+@keyframes reel{to{transform:translateX(-50%)}}
+@media (max-width:720px){.reel img{height:130px}}
+
+/* statement */
+.statement{padding-block:140px}
+.statement p{font-family:var(--f-display);font-stretch:100%;font-weight:700;font-size:clamp(1.7rem,4.2vw,3.6rem);line-height:1.12;letter-spacing:-.01em;max-width:24ch}
+.statement .w{opacity:.16;transition:opacity .3s}
+.statement .w.lit{opacity:1}
+.statement .w.hot{color:var(--hot)}
+
+/* section head */
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px;border-bottom:1px solid var(--line);padding-bottom:24px}
+.sh h2{font-size:clamp(2.8rem,9vw,7.5rem);font-stretch:125%;font-weight:900;text-transform:uppercase}
+.sh p{max-width:44ch;color:var(--muted)}
+section.blk{padding-block:110px}
+
+/* work */
+.work-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:48px;align-items:start}
+.cats{position:sticky;top:110px;display:flex;flex-direction:column;gap:2px}
+.cat{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted);font:600 1.02rem var(--f-body);transition:color .3s,padding .4s var(--ease)}
+.cat sup{font:400 .72rem var(--f-mono);color:var(--muted)}
+.cat:hover{color:var(--ink);padding-left:8px}
+.cat[aria-pressed="true"]{color:var(--hot);padding-left:14px}
+.cat[aria-pressed="true"]::before{content:"→";position:absolute;margin-left:-18px}
+.cat:focus-visible{outline:2px solid var(--hot)}
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:150px;grid-auto-flow:dense;gap:14px}
+.tile{position:relative;border-radius:18px;overflow:hidden;background:var(--card);cursor:pointer;grid-column:span 2;grid-row:span 2;border:0;padding:0;color:inherit;font:inherit;text-align:left;isolation:isolate}
+.tile.w3{grid-column:span 3}
+.tile.w4{grid-column:span 4}
+.tile.tall{grid-row:span 3}
+.tile.gone{display:none}
+.tile.pop{animation:tileIn .7s var(--ease) both}
+@keyframes tileIn{from{opacity:0;transform:scale(.9) translateY(30px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .6s}
+.tile:hover img{transform:scale(1.07)}
+.tile .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,9,17,.92));z-index:1;transition:opacity .4s}
+.tile .info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px;display:flex;flex-direction:column;gap:4px;transform:translateY(12px);transition:transform .5s var(--ease)}
+.tile:hover .info{transform:none}
+.tile .info small{font:500 .68rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--hot-2)}
+.tile .info h3{font-family:var(--f-body);font-weight:600;font-size:1.05rem;line-height:1.25}
+.tile .info p{font-size:.85rem;color:var(--muted);line-height:1.4;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s}
+.tile:hover .info p,.tile:focus-visible .info p{max-height:5em;opacity:1}
+.tile .badge{position:absolute;top:14px;right:14px;z-index:2;width:46px;height:46px;border-radius:50%;background:var(--hot);color:var(--bg);display:grid;place-items:center;transition:transform .5s var(--ease)}
+.tile:hover .badge{transform:rotate(-45deg) scale(1.1)}
+.tile.video .badge{transform:none}
+.tile.video:hover .badge{transform:scale(1.15)}
+.tile.cert{background:linear-gradient(150deg,var(--plum),#3B1F5C);padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.tile.cert.has-img{padding:0}
+.tile.cert h3{font-family:var(--f-display);font-stretch:110%;font-weight:900;font-size:1.35rem;line-height:1.05;text-transform:uppercase}
+.tile.cert small{font:500 .7rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#E3D6FF}
+.tile.cert .go{font-weight:600;font-size:.9rem;display:flex;gap:8px;align-items:center}
+@media (max-width:1020px){.bento{grid-template-columns:repeat(4,minmax(0,1fr))}.tile.w4{grid-column:span 4}.tile.w3{grid-column:span 2}}
+@media (max-width:860px){
+  .work-layout{grid-template-columns:1fr;gap:24px}
+  .cats{position:sticky;top:76px;z-index:5;flex-direction:row;overflow-x:auto;gap:8px;padding-block:10px;background:var(--bg);scrollbar-width:none;margin-inline:-4px}
+  .cats::-webkit-scrollbar{display:none}
+  .cat{flex:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px!important;font-size:.88rem}
+  .cat[aria-pressed="true"]{background:var(--hot);color:var(--bg);border-color:var(--hot)}
+  .cat[aria-pressed="true"]::before{display:none}
+  .cat[aria-pressed="true"] sup{color:var(--bg)}
+}
+@media (max-width:560px){
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:130px;gap:10px}
+  .tile,.tile.w3,.tile.w4{grid-column:span 2;grid-row:span 2}
+  .tile.tall{grid-row:span 3}
+  .tile .info{transform:none}.tile .info p{max-height:5em;opacity:1}
+}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.portrait{position:relative;border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5;max-width:100%}
+.portrait img{width:100%;height:115%;object-fit:cover;will-change:transform}
+.portrait::after{content:"Toronto · GTA";position:absolute;left:16px;bottom:16px;background:var(--hot);color:var(--bg);font:500 .72rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
+.about-copy h3{font-size:clamp(1.8rem,3.6vw,2.8rem);font-stretch:110%;font-weight:900;text-transform:uppercase}
+.about-copy .sub{color:var(--muted);margin-top:10px}
+.about-copy .bio{margin-top:24px;color:var(--ink);opacity:.86;max-width:60ch}
+.kv{margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.kv div{background:var(--bg);padding:16px;min-width:0}
+.kv dt{font:500 .68rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kv dd{margin:4px 0 0;font-weight:600;overflow-wrap:anywhere}
+.nums{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px}
+.nums div{min-width:0}
+.nums strong{display:block;font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:3.2rem;line-height:1;color:var(--hot);font-variant-numeric:tabular-nums}
+.nums span{font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}.portrait{max-width:420px}}
+@media (max-width:480px){.kv{grid-template-columns:1fr}}
+
+/* experience accordion */
+.xp{border-top:1px solid var(--line)}
+.xp-item{border-bottom:1px solid var(--line)}
+.xp-head{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:150px minmax(0,1fr) 48px;gap:24px;align-items:center;padding:28px 0;transition:padding .4s var(--ease)}
+.xp-head:focus-visible{outline:2px solid var(--hot)}
+.xp-head:hover{padding-left:10px}
+.xp-when{font:500 .8rem var(--f-mono);color:var(--muted);letter-spacing:.04em}
+.xp-title{font-family:var(--f-display);font-stretch:105%;font-weight:700;font-size:clamp(1.25rem,2.6vw,2rem);line-height:1.1;transition:color .3s}
+.xp-org{display:block;font:500 .9rem var(--f-body);color:var(--muted);margin-top:6px}
+.xp-head:hover .xp-title,.xp-item.open .xp-title{color:var(--hot)}
+.plus{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);position:relative;transition:.4s var(--ease)}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:currentColor;transform:translate(-50%,-50%);transition:.4s var(--ease)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.xp-item.open .plus{background:var(--hot);border-color:var(--hot);color:var(--bg)}
+.xp-item.open .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.xp-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.xp-item.open .xp-body{grid-template-rows:1fr}
+.xp-body > div{overflow:hidden}
+.xp-body ul{margin:0 0 30px;padding:0 0 0 174px;list-style:none;display:grid;gap:10px;color:var(--muted)}
+.xp-body li{position:relative;padding-left:22px}
+.xp-body li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--hot)}
+.xp-body a{color:var(--hot-2)}
+@media (max-width:720px){
+  .xp-head{grid-template-columns:minmax(0,1fr) 44px;gap:8px 16px}
+  .xp-when{grid-column:1/-1}
+  .xp-body ul{padding-left:0}
+}
+.edu-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:56px}
+.edu{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:26px;min-width:0}
+.edu h4{font-family:var(--f-body);font-size:1.15rem;font-weight:600;line-height:1.3;margin-top:10px}
+.edu p{color:var(--muted);font-size:.93rem;margin-top:8px}
+.edu a{color:var(--hot-2)}
+.resume-dl{display:inline-flex;gap:10px;align-items:center;margin-top:40px;text-decoration:none;font-weight:600;border-bottom:2px solid var(--hot);padding-bottom:4px}
+.resume-dl:hover{color:var(--hot)}
+@media (max-width:720px){.edu-row{grid-template-columns:1fr}}
+
+/* contact */
+.contact-big{display:block;text-decoration:none;font-family:var(--f-display);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(2.2rem,8.5vw,8rem);line-height:.9;letter-spacing:-.02em}
+.contact-big span{display:inline-block;transition:transform .6s var(--ease),color .3s}
+.contact-big:hover span{color:var(--hot)}
+.contact-big:hover span:nth-child(2){transform:translateX(.25em)}
+.copy-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;background:var(--bg2);color:var(--ink);font:500 .95rem var(--f-body);cursor:pointer;text-decoration:none;transition:.3s}
+.pill:hover{border-color:var(--hot);color:var(--hot)}
+.pill.solid{background:var(--hot);border-color:var(--hot);color:var(--bg)}
+.pill.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:64px}
+.cform{display:grid;gap:22px}
+.cform .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.fl{position:relative;min-width:0}
+.fl input,.fl textarea{width:100%;background:transparent;border:0;border-bottom:1.5px solid var(--line);color:var(--ink);font:500 1.05rem var(--f-body);padding:22px 0 10px;transition:border-color .3s;border-radius:0}
+.fl textarea{min-height:130px;resize:vertical}
+.fl input:focus,.fl textarea:focus{outline:none;border-color:var(--hot)}
+.fl label{position:absolute;left:0;top:22px;color:var(--muted);pointer-events:none;transition:.3s var(--ease);font-size:1rem}
+.fl input:focus+label,.fl input:not(:placeholder-shown)+label,.fl textarea:focus+label,.fl textarea:not(:placeholder-shown)+label{top:0;font:500 .7rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--hot)}
+.note{font-size:.9rem;color:var(--muted)}
+.note.ok{color:#5BE3A0}
+.where{background:var(--bg2);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.where .map{aspect-ratio:16/11;max-width:100%}
+.where iframe{width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(180deg) saturate(.6)}
+.where dl{margin:0;padding:22px;display:grid;gap:14px}
+.where dt{font:500 .68rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.where dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+.where dd a{text-decoration:none}
+.where dd a:hover{color:var(--hot)}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.cform .two{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:32px max(32px,env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 .82rem var(--f-mono);color:var(--muted)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--hot)}
+footer nav{display:flex;gap:18px}
+
+/* viewer */
+.viewer{position:fixed;inset:0;z-index:150;background:rgba(10,6,12,.96);display:grid;grid-template-rows:auto minmax(0,1fr) auto;opacity:0;pointer-events:none;transition:opacity .4s}
+.viewer.open{opacity:1;pointer-events:auto}
+.v-top,.v-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:max(16px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 16px max(20px,env(safe-area-inset-left,0px));font:500 .78rem var(--f-mono);color:var(--muted);letter-spacing:.06em}
+.v-bot{padding:16px max(20px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));font:500 .95rem var(--f-body);color:var(--ink);letter-spacing:0}
+.v-bot p{min-width:0}
+.v-bot a{color:var(--hot)}
+.v-stage{display:flex;align-items:center;justify-content:center;padding:0 max(70px,env(safe-area-inset-right,0px)) 0 max(70px,env(safe-area-inset-left,0px));min-height:0}
+.v-stage img{max-height:100%;max-width:100%;object-fit:contain;border-radius:8px;animation:vIn .6s var(--ease)}
+.v-stage .vid{width:100%;max-width:1100px;aspect-ratio:16/9;max-height:100%}
+.v-stage iframe{width:100%;height:100%;border:0;border-radius:8px}
+@keyframes vIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.v-btn{width:50px;height:50px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:.3s}
+.v-btn:hover{background:var(--hot);color:var(--bg);border-color:var(--hot)}
+.v-nav{display:flex;gap:10px}
+@media (max-width:600px){.v-stage{padding:0 12px}}
+
+.reveal{transform:translateY(40px);opacity:0;transition:transform 1s var(--ease),opacity 1s var(--ease)}
+.reveal.in{transform:none;opacity:1}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{transform:none;opacity:1}
+  .hero h1 .ch{transform:none;opacity:1}
+  .statement .w{opacity:1}
+}
+</style>
+</head>
+<body>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="who"><span>Hardev Kamboe</span><span>Portfolio ’26</span></div>
+  <div class="count" id="count">0</div>
+</div>
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorTxt">View</span></div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="mono-logo" href="#hero" aria-label="Hardev Kamboe — home">HK</a>
+    <div class="top-mid"><span><span class="dot"></span>Open to UX &amp; marketing roles</span><span>Toronto <span id="clock">--:--</span></span></div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="overlay"><span id="menuLabel">Menu</span><span class="burger"><i></i><i></i></span></button>
+  </div>
+</header>
+
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="wrap">
+    <ol>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+    <aside>
+      <div><span class="kicker">Email</span><br><a href="mailto:kamboehardev@gmail.com">kamboehardev@gmail.com</a></div>
+      <div><span class="kicker">Call</span><br><a href="tel:+12898385809">+1 289 838 5809</a></div>
+      <div><span class="kicker">Social</span><br><a href="https://www.instagram.com/hardev__k/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/hardev-kamboe-882523258/" target="_blank" rel="noopener">LinkedIn</a></div>
+    </aside>
+  </div>
+</div>
+
+<main>
+<section id="hero" class="hero">
+  <div class="wrap">
+    <span class="kicker">UX Designer &amp; Digital Marketer — Wilfrid Laurier University</span>
+    <h1 aria-label="Hardev Kamboe">
+      <span class="row"><span class="clip" id="l1">Hardev</span><span class="hero-face"><img src="https://kamboe.com/assets/img/profile-img.jpg" alt=""></span></span>
+      <span class="row"><span class="clip" id="l2">Kamboe</span></span>
+    </h1>
+    <div class="hero-sub">
+      <div>
+        <p class="role">I'm a <span class="swap" id="swap"></span></p>
+        <p class="lead">A fourth-year UX Design student at Wilfrid Laurier University, seeking opportunities in UX design and digital marketing across the Greater Toronto Area.</p>
+      </div>
+      <a class="scroll-cue" href="#portfolio" aria-label="Scroll to portfolio">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#circ">See the work · See the work · </textPath></text></svg>
+        <b>↓</b>
+      </a>
+    </div>
+  </div>
+  <div class="reel" aria-hidden="true"><div class="reel-track" id="reel"></div></div>
+</section>
+
+<section class="statement">
+  <div class="wrap"><p id="statement">I work where design meets data. I turn App Store reviews, focus groups and campaign numbers into user journeys that feel easier and perform better.</p></div>
+</section>
+
+<section id="portfolio" class="blk">
+  <div class="wrap">
+    <div class="sh reveal">
+      <h2>Selected<br>work</h2>
+      <p>A selection of my work across UX design, visual design, and digital marketing, from app prototypes and websites to campaign creative, branding, and video.</p>
+    </div>
+    <div class="work-layout">
+      <div class="cats" id="cats" role="toolbar" aria-label="Filter by category"></div>
+      <div class="bento" id="bento"></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="blk">
+  <div class="wrap">
+    <div class="sh reveal"><h2>About</h2><p>Currently studying at Wilfrid Laurier University.</p></div>
+    <div class="about-grid">
+      <div class="portrait reveal" id="portrait"><img src="https://kamboe.com/assets/img/profile-img.jpg" alt="Portrait of Hardev Kamboe" loading="lazy"></div>
+      <div class="about-copy reveal">
+        <h3>UX Designer &amp; Digital Marketer</h3>
+        <p class="sub">Brantford-trained, GTA-based, data-minded.</p>
+        <p class="bio">As a Digital Performance Marketing intern at TD Bank Group, I analyzed paid search, social, and display campaigns across the funnel, wrote weekly performance recaps, and turned App Store reviews and focus group feedback into UX recommendations. Before that, at Breeze Max Web, I designed Google Ads creative and website wireframes, and I've used Design Thinking and Figma to build more intuitive user journeys for projects like ISOW. I'm looking to bring both skill sets to a team that cares about how users experience a brand, and how that shows up in the numbers.</p>
+        <dl class="kv">
+          <div><dt>Website</dt><dd>www.kamboe.com</dd></div>
+          <div><dt>Degree</dt><dd>Undergraduate</dd></div>
+          <div><dt>Phone</dt><dd>+1 289 838 5809</dd></div>
+          <div><dt>Email</dt><dd>kamboehardev@gmail.com</dd></div>
+          <div><dt>City</dt><dd>Toronto, Canada</dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/hardev__k/" target="_blank" rel="noopener">@hardev__k</a></dd></div>
+        </dl>
+        <div class="nums">
+          <div><strong data-n="20">0</strong><span>screens in Barkyard</span></div>
+          <div><strong data-n="4">0</strong><span>Figma projects</span></div>
+          <div><strong data-n="4">0</strong><span>certifications</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume" class="blk">
+  <div class="wrap">
+    <div class="sh reveal"><h2>Resume</h2><p>UX Design student with paid digital performance marketing experience at TD, working where user research, design and campaign data meet.</p></div>
+    <div class="xp" id="xp">
+      <div class="xp-item open reveal">
+        <button class="xp-head" aria-expanded="true"><span class="xp-when">Summer 2026</span><span class="xp-title">TD Bank Group — Digital Performance Marketing Wealth Intern/Co-op<span class="xp-org">TD Easy Trade Investing | TD Marketing</span></span><span class="plus"></span></button>
+        <div class="xp-body"><div><ul>
+          <li>Supported TD Easy Trade digital performance marketing campaigns across paid search, paid social, display, programmatic, and public site channels.</li>
+          <li>Analyzed campaign performance across Awareness, Consideration, and Acquisition using KPIs including CTR, LPVs, CPLPV, app downloads, and account opens.</li>
+          <li>Prepared weekly Growth Pod recaps summarizing channel performance, creative insights, blockers, stakeholder updates, and next steps.</li>
+          <li>Reviewed customer journey, app onboarding, and intern focus group feedback to identify UX friction points and improvement opportunities.</li>
+          <li>Analyzed customer reviews from the App Store to identify recurring usability issues, pain points, and customer needs, translating findings into actionable UX recommendations.</li>
+          <li>Contributed recommendations on audience strategy, budget allocation, retargeting, and creative testing to improve campaign efficiency.</li>
+        </ul></div></div>
+      </div>
+      <div class="xp-item reveal">
+        <button class="xp-head" aria-expanded="false"><span class="xp-when">Fall 2026</span><span class="xp-title">Barkyard – Dog Daycare &amp; Grooming App<span class="xp-org">Claude Design</span></span><span class="plus"></span></button>
+        <div class="xp-body"><div><ul>
+          <li>Took a fictional app from creative brief to a ~20-screen high-fidelity <a href="https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&amp;t=MAXCIYrpQxNXQv5U-1" target="_blank" rel="noopener">Figma prototype</a> and developer handoff using an AI-assisted Claude Design workflow (<a href="https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed" target="_blank" rel="noopener">certificate</a>).</li>
+        </ul></div></div>
+      </div>
+      <div class="xp-item reveal">
+        <button class="xp-head" aria-expanded="false"><span class="xp-when">Jul – Aug 2025</span><span class="xp-title">Mobile App Design Case Study</span><span class="plus"></span></button>
+        <div class="xp-body"><div><ul>
+          <li>Completed a short <a href="https://www.contentcreator.com/14-day-smartphone-filmmaker-course" target="_blank" rel="noopener">smartphone filmmaker course</a> in special effects.</li>
+          <li>Designed a complete set of designs <a href="https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0&amp;p=f&amp;t=lPJTcQFh3cY0hXXi-0" target="_blank" rel="noopener">for a fictional food delivery mobile app</a>, covering multiple user scenarios and workflows.</li>
+        </ul></div></div>
+      </div>
+      <div class="xp-item reveal">
+        <button class="xp-head" aria-expanded="false"><span class="xp-when">May – Jul 2024</span><span class="xp-title">Self-Published Writer</span><span class="plus"></span></button>
+        <div class="xp-body"><div><ul>
+          <li>Self-published an <a href="https://www.amazon.ca/dp/B0DS18N4P2" target="_blank" rel="noopener">Ebook</a> on Amazon.</li>
+          <li>Learned how to use an e-book template from <a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a>.</li>
+          <li>Practiced image prompting on <a href="https://ideogram.ai/" target="_blank" rel="noopener">Ideogram</a> and <a href="https://www.midjourney.com/" target="_blank" rel="noopener">MidJourney</a>.</li>
+        </ul></div></div>
+      </div>
+      <div class="xp-item reveal">
+        <button class="xp-head" aria-expanded="false"><span class="xp-when">May – Jul 2023</span><span class="xp-title">BreezeMaxWeb – Digital Marketing &amp; Design Intern<span class="xp-org">Breeze Max Web, Ontario, Canada</span></span><span class="plus"></span></button>
+        <div class="xp-body"><div><ul>
+          <li>Created visually engaging Google Ads using Adobe Photoshop.</li>
+          <li>Utilized Adobe Photoshop to create wireframes that visually represented the layout and structure of websites.</li>
+          <li>Recommended and consulted with clients on the most appropriate graphic design.</li>
+          <li>Translated written briefs into visual design concepts that captured the essence of the project.</li>
+          <li><a href="https://breezemaxweb.com" target="_blank" rel="noopener">www.breezemaxweb.com</a></li>
+        </ul></div></div>
+      </div>
+    </div>
+
+    <div class="edu-row">
+      <div class="edu reveal">
+        <span class="kicker">2022 – Expected 2027</span>
+        <h4>Bachelor of Design (BDes) in User Experience Design</h4>
+        <p>Wilfrid Laurier University – Brantford ON. This <a href="https://www.wlu.ca/programs/liberal-arts/undergraduate/user-experience-design-bdes/index.html" target="_blank" rel="noopener">program</a> emphasizes fostering design thinking and practical skills for creating impactful user experiences.</p>
+      </div>
+      <div class="edu reveal">
+        <span class="kicker">2018 – 2022</span>
+        <h4>MM Robinson High School</h4>
+        <p>High School Diploma Achieved</p>
+      </div>
+    </div>
+    <a class="resume-dl" href="https://kamboe.com/hardev-kamboe-resume.pdf" target="_blank" rel="noopener">Download full resume (PDF) <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<section id="contact" class="blk">
+  <div class="wrap">
+    <span class="kicker">If you wish to reach out to me, say hello</span>
+    <a class="contact-big" href="mailto:kamboehardev@gmail.com"><span>Let's</span> <span>talk →</span></a>
+    <div class="copy-row">
+      <button class="pill solid" id="copyEmail" type="button">kamboehardev@gmail.com · Copy</button>
+      <a class="pill" href="tel:+12898385809">+1 289 838 5809</a>
+      <a class="pill" href="https://www.linkedin.com/in/hardev-kamboe-882523258/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="pill" href="https://www.instagram.com/hardev__k/" target="_blank" rel="noopener">Instagram ↗</a>
+    </div>
+    <div class="contact-grid">
+      <form class="cform reveal" id="cform" novalidate>
+        <div class="two">
+          <div class="fl"><input id="f-name" name="name" placeholder=" " required autocomplete="name"><label for="f-name">Your Name</label></div>
+          <div class="fl"><input id="f-email" name="email" type="email" placeholder=" " required autocomplete="email"><label for="f-email">Your Email</label></div>
+        </div>
+        <div class="fl"><input id="f-subject" name="subject" placeholder=" " required><label for="f-subject">Subject</label></div>
+        <div class="fl"><textarea id="f-msg" name="message" placeholder=" " required></textarea><label for="f-msg">Message</label></div>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+          <button class="pill solid" type="submit">Send Message →</button>
+          <p class="note" id="note" aria-live="polite"></p>
+        </div>
+      </form>
+      <div class="where reveal">
+        <div class="map"><iframe title="Map of Burlington, Ontario" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92793.56933689487!2d-79.92249155185142!3d43.381225797742076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b63d2965d93b7%3A0xa44a27764c2b554f!2sBurlington%2C%20ON!5e0!3m2!1sen!2sca!4v1704718680445!5m2!1sen!2sca"></iframe></div>
+        <dl>
+          <div><dt>Location</dt><dd>Burlington, Ontario, Canada</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:kamboehardev@gmail.com">kamboehardev@gmail.com</a></dd></div>
+          <div><dt>Call</dt><dd><a href="tel:+12898385809">+1 289 838 5809</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Hardev Kamboe — kamboe.com</span>
+    <nav><a href="#hero">Back to top ↑</a></nav>
+  </div>
+</footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Project viewer" hidden>
+  <div class="v-top"><span id="vMeta"></span><button class="v-btn" id="vClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="v-stage" id="vStage"></div>
+  <div class="v-bot"><p id="vCap"></p><div class="v-nav">
+    <button class="v-btn" id="vPrev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="v-btn" id="vNext" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div></div>
+</div>
+
+<script>
+const BASE = "https://kamboe.com/";           // images load from the live site, wherever this file is opened
+const P = BASE + "assets/img/portfolio/";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isWeb = /^https?:/.test(location.protocol);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const CATS = [
+  {id:"all", name:"All"}, {id:"cert", name:"Certifications"}, {id:"figma", name:"Figma"},
+  {id:"vtl", name:"Video Transitions & Layers"}, {id:"ps", name:"Adobe Photoshop"},
+  {id:"ai", name:"Adobe Illustrator"}, {id:"ae", name:"Adobe After Effects"}, {id:"photo", name:"Photographs"}
+];
+const catName = id => CATS.find(c => c.id === id).name;
+
+/* size: "" = 2x2, w3 / w4 = wider, tall = taller */
+const ITEMS = [
+  {type:"link", cats:["figma"], size:"w4", img:P+"fruit.png", title:"Fruit Hub App", desc:"Food delivery mobile app covering multiple user scenarios and workflows.", url:"https://www.figma.com/design/1SodtPHPHeMBZLgBtS3HDD/Food-Delivery-App?node-id=12-0"},
+  {type:"link", cats:["figma"], size:"tall", img:P+"figma.jpg", title:"Dog Walking App", desc:"Barkyard — ~20-screen high-fidelity prototype.", url:"https://www.figma.com/design/fxriSdEt7KNcKwAKtxs1a5/Dog-walking-app?node-id=0-1&t=MAXCIYrpQxNXQv5U-1"},
+  {type:"link", cats:["figma"], size:"w3", img:P+"figmaproject.png", title:"UBudget app (Individual)", desc:"Student budget and expense tracker.", url:"https://www.figma.com/design/NhUroVyKD9A4mt2vJOinbp/Student-budget-and-expense-tracker?node-id=0-1&t=aBNue4S20ef7PZYW-1"},
+  {type:"link", cats:["figma"], size:"w3", img:P+"figmaproject2.png", title:"ISOW website (Group)", desc:"Group website project shaped with Design Thinking.", url:"https://www.figma.com/design/k7R8DOzb8fh9tsjL9DLKaR/ISOW-Project--Copy-?node-id=80-201&t=BdbTcJNjwq6HCLdR-1"},
+  {type:"video", cats:["vtl","ae"], size:"w4", yt:"CRTjxAvqmtE", title:"Video transition edit", desc:"Transitions and layered effects."},
+  {type:"video", cats:["vtl"], size:"", yt:"86hLAGPfCAY", title:"Layered video edit", desc:"Transitions and layered effects."},
+  {type:"image", cats:["ps"], size:"tall", img:P+"photoshop1.jpg", title:"Restaurant menu", desc:"This is a restaurant menu I made"},
+  {type:"image", cats:["ps"], size:"", img:P+"photoshop2.jpg", title:"Cioppino special flyer", desc:"Promotional flyer showcasing a seafood cioppino special offer"},
+  {type:"image", cats:["ps"], size:"", img:P+"photoshop3.jpg", title:"KEEP PACE", desc:"KEEP PACE"},
+  {type:"image", cats:["ps"], size:"w3", img:P+"photoshop4.jpg", title:"Depth", desc:"Emphasizing depth by visually integrating it as text descending into a well-like perspective"},
+  {type:"image", cats:["vtl"], size:"w3", img:P+"img4.jpg", title:"Samurai — manga", desc:"Prompt: Create a samurai in a forest setting during a cold night in a manga style"},
+  {type:"image", cats:["vtl"], size:"w3", img:P+"img5.jpg", title:"Samurai — shonen", desc:"Prompt: Create a samurai in a forest setting during a cold night in a shonen manga style"},
+  {type:"image", cats:["ps"], size:"", img:P+"boba.jpg", title:"Boba tea", desc:"Boba tea with tapioca pearls in a vibrant presentation"},
+  {type:"image", cats:["ps"], size:"", img:P+"Orange%20Juice.jpg", title:"Orange juice", desc:"An orange juice bottle with fresh oranges"},
+  {type:"image", cats:["ps"], size:"", img:P+"Mango.jpg", title:"Golden peach", desc:"A peach with a bright golden hue"},
+  {type:"image", cats:["ai"], size:"w3", img:P+"ocean.jpg", title:"Seafood logo", desc:"Seafood logo with fish icon and clean typography"},
+  {type:"image", cats:["ai"], size:"w3", img:P+"bird.jpg", title:"Bird logo", desc:"A multicolored bird logo symbolizing freedom and creativity"},
+  {type:"image", cats:["ps"], size:"", img:P+"pepper.jpg", title:"Green pepper", desc:"A bright green pepper with typography"},
+  {type:"image", cats:["ps"], size:"", img:P+"Pizza.jpg", title:"Pepperoni pizza", desc:"A cheesy slice of pepperoni pizza"},
+  {type:"image", cats:["ps"], size:"", img:P+"Strawberry.jpg", title:"Bursting strawberry", desc:"A sliced-up bursting strawberry"},
+  {type:"image", cats:["ai"], size:"w4", img:P+"Ocean%20fresh%203.jpg", title:"Ocean Fresh", desc:"Minimalist seafood logo featuring waves and a cone and oceanic freshness"},
+  {type:"video", cats:["ae"], size:"", yt:"txPtRznpClI", title:"After Effects piece 1", desc:"Motion work in Adobe After Effects."},
+  {type:"video", cats:["ae"], size:"w3", yt:"Zup24veFqCw", title:"After Effects piece 2", desc:"Motion work in Adobe After Effects."},
+  {type:"video", cats:["ae"], size:"w3", yt:"RqXbTGhtl30", title:"After Effects piece 3", desc:"Motion work in Adobe After Effects."},
+  {type:"image", cats:["photo"], size:"tall", img:P+"photo1.jpg", title:"Photography 1", desc:"Photograph"},
+  {type:"image", cats:["photo"], size:"tall", img:P+"photo2.jpg", title:"Photography 2", desc:"Photograph"},
+  {type:"image", cats:["photo"], size:"tall", img:P+"photo3.jpg", title:"Photography 3", desc:"Photograph"},
+  {type:"cert", cats:["cert"], size:"w4", img:P+"claude-ai-certificate.jpg", title:"Claude AI UI/UX: Complete Workflow from Brief to Figma", desc:"Udemy Credential", url:"https://ude.my/UC-18ee007e-940c-4d7a-a057-7b2b9d6519ed"},
+  {type:"cert", cats:["cert"], size:"", title:"Google Prompting Essentials", desc:"Professional Certification Sharing", url:"https://coursera.org/share/08baa9ad009ada9348963743def5cdc5"},
+  {type:"cert", cats:["cert"], size:"", title:"Google Analytics", desc:"Google Skillshop Credential", url:"https://skillshop.credential.net/a37b1236-6403-436c-9a14-752fb74512bd#acc.mUhznirg"},
+  {type:"cert", cats:["cert"], size:"w3", title:"Google Ads Apps", desc:"Google Skillshop Credential", url:"https://skillshop.credential.net/2a0fb726-3ac8-45aa-a1d3-395fe5898c76#acc.yfkJAqaH"}
+];
+const thumbOf = it => it.type === "video" ? `https://i.ytimg.com/vi/${it.yt}/hqdefault.jpg` : it.img;
+
+/* ---------- preloader ---------- */
+const loader = document.getElementById("loader"), countEl = document.getElementById("count");
+function finishLoad(){ loader.classList.add("done"); document.body.classList.add("ready"); setTimeout(() => loader.remove(), 1100); }
+if (reduce) { loader.remove(); document.body.classList.add("ready"); }
+else { const t0 = performance.now(); (function f(t){ const p = Math.min(1, (t - t0) / 1100); countEl.textContent = Math.round(100 * (1 - Math.pow(1 - p, 3))); p < 1 ? requestAnimationFrame(f) : setTimeout(finishLoad, 150); })(t0); }
+
+/* ---------- hero letters ---------- */
+let k = 0;
+["l1","l2"].forEach(id => { const el = document.getElementById(id); el.innerHTML = [...el.textContent].map(c => `<span class="ch" style="--i:${k++}">${c}</span>`).join(""); });
+
+/* ---------- rotating role ---------- */
+const roles = ["UX Designer","Digital Marketer","Figma Prototyper","Visual Designer","Video Editor"];
+const swap = document.getElementById("swap");
+swap.innerHTML = roles.map((r,i) => `<span class="${i ? "" : "on"}">${r}</span>`).join("");
+const rs = [...swap.children]; let ri = 0;
+if (!reduce) setInterval(() => { rs[ri].classList.replace("on","out"); const prev = rs[ri]; setTimeout(() => prev.classList.remove("out"), 700); ri = (ri + 1) % rs.length; rs[ri].classList.add("on"); }, 2400);
+
+/* ---------- reel of work thumbnails ---------- */
+const reelImgs = ITEMS.filter(i => i.type === "image" || i.type === "link").map(i => i.img);
+document.getElementById("reel").innerHTML = [...reelImgs, ...reelImgs].map(s => `<img src="${s}" alt="" loading="lazy">`).join("");
+
+/* ---------- statement word-by-word light up ---------- */
+const st = document.getElementById("statement");
+const hotWords = ["design","data.","easier","better."];
+st.innerHTML = st.textContent.split(" ").map(w => `<span class="w${hotWords.includes(w) ? " hot" : ""}">${w}</span>`).join(" ");
+const words = [...st.querySelectorAll(".w")];
+
+/* ---------- bento ---------- */
+const bento = document.getElementById("bento"), catsEl = document.getElementById("cats");
+const arrowSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>`;
+const playSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
+const zoomSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4M11 8v6M8 11h6"/></svg>`;
+bento.innerHTML = ITEMS.map((it, i) => {
+  const tag = catName(it.cats[0]);
+  if (it.type === "cert" && !it.img) return `<button class="tile cert ${it.size}" data-i="${i}" data-cursor="Open">
+      <small>${esc(it.desc)}</small><h3>${esc(it.title)}</h3><span class="go">View Certificate ${arrowSvg}</span></button>`;
+  const badge = it.type === "video" ? playSvg : (it.type === "image" ? zoomSvg : arrowSvg);
+  return `<button class="tile ${it.size} ${it.type === "video" ? "video" : ""} ${it.type === "cert" ? "cert has-img" : ""}" data-i="${i}" data-cursor="${it.type === "video" ? "Play" : it.type === "image" ? "View" : "Open"}">
+    <img src="${thumbOf(it)}" alt="${esc(it.title)}" loading="lazy">
+    <span class="shade"></span><span class="badge">${badge}</span>
+    <span class="info"><small>${esc(it.type === "cert" ? it.desc : tag)}</small><h3>${esc(it.title)}</h3><p>${esc(it.type === "link" ? it.desc + " — opens in Figma" : it.desc)}</p></span>
+  </button>`;
+}).join("");
+const tiles = [...bento.children];
+
+catsEl.innerHTML = CATS.map(c => {
+  const n = c.id === "all" ? ITEMS.length : ITEMS.filter(i => i.cats.includes(c.id)).length;
+  return `<button class="cat" data-f="${c.id}" aria-pressed="${c.id === "all"}">${esc(c.name)}<sup>${String(n).padStart(2,"0")}</sup></button>`;
+}).join("");
+catsEl.addEventListener("click", e => {
+  const b = e.target.closest(".cat"); if (!b) return;
+  const f = b.dataset.f;
+  catsEl.querySelectorAll(".cat").forEach(x => x.setAttribute("aria-pressed", x === b));
+  let d = 0;
+  tiles.forEach((t, i) => {
+    const show = f === "all" || ITEMS[i].cats.includes(f);
+    t.classList.toggle("gone", !show); t.classList.remove("pop");
+    if (show) { void t.offsetWidth; t.style.animationDelay = (d++ * 50) + "ms"; t.classList.add("pop"); }
+  });
+  if (innerWidth <= 860) b.scrollIntoView({inline:"center", block:"nearest", behavior: reduce ? "auto" : "smooth"});
+  const top = document.getElementById("portfolio").getBoundingClientRect().top;
+  if (top < -200) document.getElementById("portfolio").scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+});
+
+/* ---------- viewer ---------- */
+const viewer = document.getElementById("viewer"), vStage = document.getElementById("vStage"), vCap = document.getElementById("vCap"), vMeta = document.getElementById("vMeta");
+let list = [], pos = 0, lastFocus;
+function render(){
+  const it = ITEMS[list[pos]];
+  const origin = isWeb ? `&origin=${encodeURIComponent(location.origin)}` : "";
+  vStage.innerHTML = it.type === "video"
+    ? `<div class="vid"><iframe src="https://www.youtube.com/embed/${it.yt}?autoplay=1&rel=0&playsinline=1${origin}" title="${esc(it.title)}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : `<img src="${it.img}" alt="${esc(it.title)}">`;
+  vMeta.textContent = `${catName(it.cats[0])} — ${String(pos + 1).padStart(2,"0")} / ${String(list.length).padStart(2,"0")}`;
+  vCap.innerHTML = `<strong>${esc(it.title)}</strong> · ${esc(it.desc)}${it.type === "video" ? ` · <a href="https://www.youtube.com/watch?v=${it.yt}" target="_blank" rel="noopener">Watch on YouTube ↗</a>` : ""}`;
+}
+function openViewer(i){
+  list = tiles.filter(t => !t.classList.contains("gone")).map(t => +t.dataset.i).filter(x => ["image","video"].includes(ITEMS[x].type));
+  pos = Math.max(0, list.indexOf(i)); lastFocus = document.activeElement;
+  viewer.hidden = false; requestAnimationFrame(() => viewer.classList.add("open"));
+  document.body.classList.add("locked"); render(); document.getElementById("vClose").focus();
+}
+function closeViewer(){ viewer.classList.remove("open"); document.body.classList.remove("locked"); setTimeout(() => { viewer.hidden = true; vStage.innerHTML = ""; }, 400); lastFocus && lastFocus.focus(); }
+const step = n => { pos = (pos + n + list.length) % list.length; render(); };
+bento.addEventListener("click", e => {
+  const t = e.target.closest(".tile"); if (!t) return;
+  const it = ITEMS[+t.dataset.i];
+  if (it.url) return window.open(it.url, "_blank", "noopener");
+  /* YouTube refuses embeds on a page opened straight from disk, so open YouTube itself there */
+  if (it.type === "video" && !isWeb) return window.open(`https://www.youtube.com/watch?v=${it.yt}`, "_blank", "noopener");
+  openViewer(+t.dataset.i);
+});
+document.getElementById("vClose").onclick = closeViewer;
+document.getElementById("vPrev").onclick = () => step(-1);
+document.getElementById("vNext").onclick = () => step(1);
+vStage.addEventListener("click", e => { if (e.target === vStage) closeViewer(); });
+document.addEventListener("keydown", e => {
+  if (!viewer.hidden) { if (e.key === "Escape") closeViewer(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); }
+  else if (e.key === "Escape" && document.body.classList.contains("menu-open")) toggleMenu(false);
+});
+let sx = null;
+viewer.addEventListener("touchstart", e => sx = e.touches[0].clientX, {passive:true});
+viewer.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); sx = null; });
+
+/* ---------- menu ---------- */
+const menuToggle = document.getElementById("menuToggle"), overlay = document.getElementById("overlay");
+function toggleMenu(force){
+  const open = typeof force === "boolean" ? force : !document.body.classList.contains("menu-open");
+  document.body.classList.toggle("menu-open", open); document.body.classList.toggle("locked", open);
+  menuToggle.setAttribute("aria-expanded", open); overlay.setAttribute("aria-hidden", !open);
+  document.getElementById("menuLabel").textContent = open ? "Close" : "Menu";
+}
+menuToggle.onclick = () => toggleMenu();
+overlay.addEventListener("click", e => { if (e.target.closest("a")) toggleMenu(false); });
+
+/* ---------- accordion ---------- */
+document.getElementById("xp").addEventListener("click", e => {
+  const h = e.target.closest(".xp-head"); if (!h || e.target.closest("a")) return;
+  const item = h.parentElement, open = !item.classList.contains("open");
+  item.classList.toggle("open", open); h.setAttribute("aria-expanded", open);
+});
+
+/* ---------- scroll effects ---------- */
+const topBar = document.getElementById("top"), portrait = document.querySelector("#portrait img");
+let lastY = 0;
+function onScroll(){
+  const y = scrollY;
+  topBar.classList.toggle("scrolled", y > 40);
+  topBar.classList.toggle("hidden", y > lastY && y > 400 && !document.body.classList.contains("menu-open"));
+  lastY = y;
+  if (!reduce) {
+    const r = st.getBoundingClientRect(), p = (innerHeight * .85 - r.top) / (r.height + innerHeight * .35);
+    const lit = Math.floor(Math.min(1, Math.max(0, p)) * words.length);
+    words.forEach((w, i) => w.classList.toggle("lit", i < lit));
+    const pr = portrait.parentElement.getBoundingClientRect();
+    portrait.style.transform = `translateY(${(pr.top / innerHeight) * -40}px)`;
+  }
+}
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+/* reveal: elements already on screen show at once */
+if ("IntersectionObserver" in window && !reduce) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.1});
+  document.querySelectorAll(".reveal").forEach(el => el.getBoundingClientRect().top < innerHeight ? el.classList.add("in") : io.observe(el));
+  const co = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; co.unobserve(e.target);
+    const end = +e.target.dataset.n, t0 = performance.now();
+    (function f(t){ const p = Math.min(1, (t - t0) / 1400); e.target.textContent = Math.round(end * (1 - Math.pow(1 - p, 4))); if (p < 1) requestAnimationFrame(f); })(t0);
+  }), {threshold:.6});
+  document.querySelectorAll("[data-n]").forEach(n => co.observe(n));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+  document.querySelectorAll("[data-n]").forEach(n => n.textContent = n.dataset.n);
+}
+
+/* ---------- cursor ---------- */
+const cursor = document.getElementById("cursor"), cTxt = document.getElementById("cursorTxt");
+if (matchMedia("(hover:hover) and (pointer:fine)").matches && !reduce) {
+  let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my;
+  addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; });
+  (function loop(){ cx += (mx - cx) * .2; cy += (my - cy) * .2; cursor.style.transform = `translate(${cx}px,${cy}px)`; requestAnimationFrame(loop); })();
+  document.addEventListener("mouseover", e => {
+    const t = e.target.closest("[data-cursor]");
+    cursor.classList.toggle("big", !!t); if (t) cTxt.textContent = t.dataset.cursor;
+  });
+} else cursor.remove();
+
+/* ---------- Toronto clock ---------- */
+const clock = document.getElementById("clock");
+function tickClock(){ try { clock.textContent = new Intl.DateTimeFormat("en-CA",{timeZone:"America/Toronto",hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date()); } catch(e){ clock.textContent = ""; } }
+tickClock(); setInterval(tickClock, 30000);
+
+/* ---------- copy email ---------- */
+const copyBtn = document.getElementById("copyEmail");
+copyBtn.onclick = async () => {
+  try { await navigator.clipboard.writeText("kamboehardev@gmail.com"); copyBtn.textContent = "Copied ✓"; }
+  catch(e){ copyBtn.textContent = "kamboehardev@gmail.com"; }
+  setTimeout(() => copyBtn.textContent = "kamboehardev@gmail.com · Copy", 2000);
+};
+
+/* ---------- contact form → visitor's email app ---------- */
+document.getElementById("cform").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, note = document.getElementById("note");
+  if (!f.checkValidity()) { note.className = "note"; note.textContent = "Please fill in every field with a valid email."; f.reportValidity(); return; }
+  location.href = `mailto:kamboehardev@gmail.com?subject=${encodeURIComponent(f.subject.value)}&body=${encodeURIComponent(f.message.value + "\n\n— " + f.name.value + " (" + f.email.value + ")")}`;
+  note.className = "note ok"; note.textContent = "Your email app should open with the message ready to send.";
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
